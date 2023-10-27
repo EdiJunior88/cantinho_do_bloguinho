@@ -1,1 +1,1 @@
-# cantinho_do_bloguinho
+# cantinho_do_bloguinho (em construção)
