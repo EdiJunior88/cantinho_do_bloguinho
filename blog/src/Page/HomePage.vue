@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import CardDefault from '@/components/Cards/CardDefault.vue'
-import { cardTitle_01, cardTitle_02 } from '@/components/Titles/2023/November/titles.ts'
+import { cardTitle_01, cardTitle_02 } from '@/components/Titles/2023/November/titles'
 
 // Função para formatar um título
 const formatTitle = (title: string) => {
