@@ -2,6 +2,7 @@
 </script>
 
 <template>
+  //Cabeçalho
   <RouterLink to="/"> Home </RouterLink>
 </template>
 
