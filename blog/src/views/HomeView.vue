@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div>Home View Page</div>
+  <RouterLink to="/"> Home </RouterLink>
 </template>
 
 <style lang="css" scoped></style>
