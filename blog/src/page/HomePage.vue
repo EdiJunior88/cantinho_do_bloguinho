@@ -19,11 +19,11 @@ const formattedTitle_02 = formatTitle(cardTitle_02)
 <template>
   <div class="container mx-auto">
     <RouterLink :to="{ name: 'news1', params: { title: formattedTitle_01 } }">
-      <CardDefault icon="vi-file-type-vue" :title="cardTitle_01"> </CardDefault>
+      <CardDefault icon="vi-file-type-vue" :title="cardTitle_01" />
     </RouterLink>
 
     <RouterLink :to="{ name: 'news2', params: { title: formattedTitle_02 } }">
-      <CardDefault icon="vi-file-type-vue" :title="cardTitle_02"> </CardDefault>
+      <CardDefault icon="vi-file-type-vue" :title="cardTitle_02" />
     </RouterLink>
   </div>
 </template>
