@@ -4,50 +4,68 @@ import { cardTitle_01 } from '@/components/Titles/2023/November/titles'
 </script>
 
 <template>
-  <div class="container mx-auto w-5/6">
+  <div class="container mx-auto p-10 w-10/12 rounded-3xl bg-semi-transparent leading-7">
     <header>
-      <div>Publicado em 07/11/2023</div>
-      <div>{{ cardTitle_01 }}</div>
+      <div class="text-slate-500 text-xs font-medium uppercase">Publicado em 07/11/2023</div>
+      <div class="font-title text-center py-10 font-extrabold text-3xl">{{ cardTitle_01 }}</div>
     </header>
 
     <section>
       <p class="py-2">
-        Esse é um tutorial que funciona no VueJS (v3.3.8) em conjunto com o Vite mais recente
-        (v4.5.0)
+        Esse é um tutorial que funciona no <span class="marcatexto">VueJS (v3.3.8)</span> em
+        conjunto com o <span class="marcatexto"> Vite mais recente (v4.5.0) </span>
       </p>
 
       <p class="py-2">
-        É sempre importante lembrar de que você pode configurar corretamente o seu projeto para que
+        É sempre importante lembrar que você pode configurar corretamente o seu projeto para que
         facilite certos tipos de ação aumentando a sua produtividade, e um desses tipos de
         configuração é como podemos melhorar métodos de
-        <span class="marcatexto">chamar</span> pastas / arquivos / imagens dentro de um projeto de
-        forma eficiente através do <span class="marcatexto">path alias @</span>
+        <span class="marcatexto">chamar pastas / arquivos / imagens</span> dentro de um projeto de
+        forma eficiente e sem se preocupar muito com os subdiretórios, tudo isso através do <span class="marcatexto">path alias (@)</span>
       </p>
 
       <p class="py-2">
-        Geralmente chamamos as pastas por caminhos através de pontinhos
-        <span class="marcatexto">(navegação por pastas)</span> por exemplo
-        <code class="codigo">import { MeuComponente } from "../../pasta/componente.vue"</code> mas
-        se preferir, poderá substituir os pontos pelo <span class="marcatexto">prefixo @</span> por
-        exemplo <code class="codigo">import { MeuComponente } from "@/pasta/componente.vue"</code>
+        Geralmente chamamos as pastas por caminhos através de pontinhos e barras
+        <span class="marcatexto">(navegação por pastas)</span>, por exemplo
+        <code class="codigo">import { MeuComponente } from "../../pasta/componente.vue"</code>
+        (lembrando o sistema de pesquisa do terminal Linux ou do Windows) mas se preferir, poderá
+        substituir os pontos pelo <span class="marcatexto">prefixo @</span> por exemplo
+        <code class="codigo">import { MeuComponente } from "@/pasta/componente.vue"</code>
       </p>
 
-      <p class="py-2">Exemplo de código com a navegação por pastas</p>
-      <div class="bg-gray-900 text-green-400">
-        <pre class="font-mono">
-          testesssssssssssssssssssssssss
-          AAAAAAAAAAAAAAAAAAAAAAAAAA
-        </pre>
-      </div>
+      <p class="pt-2 font-medium italic">Exemplo de código com a navegação por pastas:</p>
+      <img src="./assets/code01.webp" alt="exemplo código" />
 
-      <p class="py-2">Exemplo de código utilizando o path alias @</p>
+      <p class="pt-2 font-medium italic">Exemplo de código utilizando o path alias @:</p>
+      <img src="./assets/code02.webp" alt="exemplo código" />
+
+      <p>
+        Geralmente após o processo de instalação de um novo projeto VueJS esse tipo de
+        <span class="marcatexto">atalho</span> já é adicionado e configurado automaticamente em seu
+        projeto, mas em caso de dúvidas, acesse o arquivo
+        <code class="codigo">vite.config.ts</code> ou <code class="codigo">vite.config.js</code> e verifique se irá aparecer semelhante a esse
+        código abaixo:
+      </p>
+      <img src="./assets/code03.webp" alt="exemplo código" />
+
+      <p>Agora irei marcar onde o <span class="marcatexto">path (alias)</span> aparecerá:</p>
+      <img src="./assets/code04.webp" alt="exemplo código" />
+
+      <p>
+        O <span class="marcatexto">atalho @</span> é configurado para apontar para o diretório
+        <span class="marcatexto">src</span> do seu projeto. Isso é feito usando a função
+        <code class="codigo">fileURLToPath</code> e <code class="codigo">new URL</code> do
+        <span class="marcatexto">Node.js</span> para criar um caminho absoluto para o diretório
+        <span class="marcatexto">src</span>, ou seja, você poderá indicar em qualquer pasta que
+        esteja dentro da <span class="marcatexto">pasta-mãe src</span>
+      </p>
     </section>
   </div>
 </template>
 
 <style lang="css" scoped>
 .marcatexto {
-  background: #e2e2e2b0;
+  background: #d8d8d8b0;
   padding: 0.2rem 0.4rem;
   color: #5f5fff;
   font-weight: 500;
@@ -62,9 +80,7 @@ import { cardTitle_01 } from '@/components/Titles/2023/November/titles'
   border-radius: 10px;
 }
 
-pre {
-  white-space: pre-wrap;
-  /* margin-left: -4rem; */
-  padding-top: 1rem;
+img {
+  padding-bottom: 1rem;
 }
 </style>
