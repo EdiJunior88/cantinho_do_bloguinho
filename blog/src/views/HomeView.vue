@@ -1,8 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HeaderComponent from '@/components/Header/HeaderComponent.vue';
+
+</script>
 
 <template>
   <!-- Cabeçalho -->
-  <RouterLink to="/"> Home </RouterLink>
+  <HeaderComponent />
 </template>
 
 <style lang="css" scoped></style>

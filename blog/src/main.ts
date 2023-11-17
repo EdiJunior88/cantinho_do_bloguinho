@@ -3,9 +3,9 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import { OhVueIcon, addIcons } from 'oh-vue-icons'
-import { ViFileTypeVue } from 'oh-vue-icons/icons'
+import { ViFileTypeVue, FcCollaboration  } from 'oh-vue-icons/icons'
 
-addIcons(ViFileTypeVue)
+addIcons(ViFileTypeVue, FcCollaboration)
 
 const app = createApp(App)
 

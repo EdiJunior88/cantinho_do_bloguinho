@@ -17,7 +17,7 @@ const formattedTitle_02 = formatTitle(cardTitle_02)
 </script>
 
 <template>
-  <div class="container mx-auto">
+  <div class="mx-auto max-w-screen-md">
     <RouterLink :to="{ name: 'news1', params: { title: formattedTitle_01 } }">
       <CardDefault icon="vi-file-type-vue" :title="cardTitle_01" />
     </RouterLink>
