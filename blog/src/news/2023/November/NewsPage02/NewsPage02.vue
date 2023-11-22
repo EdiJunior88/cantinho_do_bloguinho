@@ -40,7 +40,7 @@ import { cardTitle_02, cardDate_02 } from '@/components/Titles/2023/November/tit
         Imagem mostrando como é a arquitetura Cliente e Servidor:
       </p>
       <img
-        src="./assets/code05.webp"
+        src="./assets/code01.webp"
         alt="arquitetura cliente e servidor"
         width="70%"
         height="auto"
@@ -52,7 +52,7 @@ import { cardTitle_02, cardDate_02 } from '@/components/Titles/2023/November/tit
         <code class="codigo">next.config.js</code> ou <code class="codigo">next.config.ts</code>.
         Agora irei marcar onde o <span class="marcatexto">compiler:</span> será adicionado:
       </p>
-      <img src="./assets/code06.webp" alt="exemplo código" />
+      <img src="./assets/code02.webp" alt="exemplo código" />
 
       <p class="py-2">
         O <code class="codigo">compiler: {}</code> diz para o NextJS compilar o seu código
@@ -84,7 +84,7 @@ import { cardTitle_02, cardDate_02 } from '@/components/Titles/2023/November/tit
         Também temos que criar um arquivo raiz chamado de <code class="codigo">registry.js</code> ou
         <code class="codigo">registry.tsx</code> da seguinte maneira:
       </p>
-      <img src="./assets/code07.webp" alt="exemplo código" />
+      <img src="./assets/code03.webp" alt="exemplo código" />
 
       <p class="py-2">
         Este código é um módulo para registrar e gerenciar componentes estilizados em uma aplicação
