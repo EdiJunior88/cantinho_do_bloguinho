@@ -28,7 +28,7 @@ const formattedTitle_02 = formatTitle(cardTitle_02)
     </RouterLink>
 
     <RouterLink :to="{ name: 'news2', params: { title: formattedTitle_02 } }">
-      <CardDefault icon="vi-file-type-vue" :title="cardTitle_02" :datePost="cardDate_02" />
+      <CardDefault icon="vi-file-type-light-next" :title="cardTitle_02" :datePost="cardDate_02" />
     </RouterLink>
   </div>
 </template>
