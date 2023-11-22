@@ -1,12 +1,12 @@
 <script setup lang="ts">
 /* Data 07/11/2023 */
-import { cardTitle_01 } from '@/components/Titles/2023/November/titles'
+import { cardTitle_01, cardDate_01 } from '@/components/Titles/2023/November/titles'
 </script>
 
 <template>
   <div class="container mx-auto p-10 w-10/12 rounded-3xl bg-semi-transparent leading-7">
     <header>
-      <div class="text-slate-500 text-xs font-medium uppercase">Publicado em 07/11/2023</div>
+      <div class="text-slate-500 text-xs font-medium uppercase">Publicado em {{ cardDate_01 }}</div>
       <div class="font-title text-center py-10 font-extrabold text-3xl">{{ cardTitle_01 }}</div>
     </header>
 
@@ -21,7 +21,8 @@ import { cardTitle_01 } from '@/components/Titles/2023/November/titles'
         facilite certos tipos de ação aumentando a sua produtividade, e um desses tipos de
         configuração é como podemos melhorar métodos de
         <span class="marcatexto">chamar pastas / arquivos / imagens</span> dentro de um projeto de
-        forma eficiente e sem se preocupar muito com os subdiretórios, tudo isso através do <span class="marcatexto">path alias (@)</span>
+        forma eficiente e sem se preocupar muito com os subdiretórios, tudo isso através do
+        <span class="marcatexto">path alias (@)</span>
       </p>
 
       <p class="py-2">
@@ -43,8 +44,8 @@ import { cardTitle_01 } from '@/components/Titles/2023/November/titles'
         Geralmente após o processo de instalação de um novo projeto VueJS esse tipo de
         <span class="marcatexto">atalho</span> já é adicionado e configurado automaticamente em seu
         projeto, mas em caso de dúvidas, acesse o arquivo
-        <code class="codigo">vite.config.ts</code> ou <code class="codigo">vite.config.js</code> e verifique se irá aparecer semelhante a esse
-        código abaixo:
+        <code class="codigo">vite.config.ts</code> ou <code class="codigo">vite.config.js</code> e
+        verifique se irá aparecer semelhante a esse código abaixo:
       </p>
       <img src="./assets/code03.webp" alt="exemplo código" />
 
@@ -81,6 +82,6 @@ import { cardTitle_01 } from '@/components/Titles/2023/November/titles'
 }
 
 img {
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 }
 </style>

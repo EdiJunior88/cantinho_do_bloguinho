@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import CardDefault from '@/components/Cards/CardDefault.vue'
-import { cardTitle_01, cardTitle_02 } from '@/components/Titles/2023/November/titles'
+import {
+  cardTitle_01,
+  cardDate_01,
+  cardTitle_02,
+  cardDate_02
+} from '@/components/Titles/2023/November/titles'
 
 //Função para formatar um título
 const formatTitle = (title: string) => {
@@ -19,11 +24,11 @@ const formattedTitle_02 = formatTitle(cardTitle_02)
 <template>
   <div class="mx-auto max-w-screen-md">
     <RouterLink :to="{ name: 'news1', params: { title: formattedTitle_01 } }">
-      <CardDefault icon="vi-file-type-vue" :title="cardTitle_01" />
+      <CardDefault icon="vi-file-type-vue" :title="cardTitle_01" :datePost="cardDate_01" />
     </RouterLink>
 
     <RouterLink :to="{ name: 'news2', params: { title: formattedTitle_02 } }">
-      <CardDefault icon="vi-file-type-vue" :title="cardTitle_02" />
+      <CardDefault icon="vi-file-type-vue" :title="cardTitle_02" :datePost="cardDate_02" />
     </RouterLink>
   </div>
 </template>
