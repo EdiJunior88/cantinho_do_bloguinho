@@ -1,6 +1,10 @@
-<img src="img-readme/Cantinho-do-Bloguinho-title.png" width="50%">
+<img src="img-readme/Cantinho-do-Bloguinho-title.png" width="60%">
 
 <p>Cantinho do blog foi criado utilizando a tecnologia VueJS 3 e TypeScript, com o intuito especialmente de catalogar e guardar as minhas dúvidas com relação à desenvolvimento de software, outro ponto importante é que também serve para demonstrar e compartilhar de uma forma intuitiva me estimulando a pensar em formas de trazer o conteúdo entendível tanto para pessoas leigas como para profissionais sem deixar de lados os termos técnicos.</p>
+
+<hr>
+
+<strong>Link do Site: </strong><a href="https://cantinho-do-bloguinho.vercel.app/">https://cantinho-do-bloguinho.vercel.app/</a>
 
 <hr>
 
