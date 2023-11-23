@@ -1,13 +1,18 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import Image from 'next/image'
+import profilePic from './me.png'
 
-module.exports = nextConfig
-
-module.exports = {
-  images: {
-    domains: ['mks-sistemas.nyc3.digitaloceanspaces.com', 'i.ibb.co'],
-  },
-  compiler: {
-    styledComponents: true,
-  },
-};
+export default function Page() {
+  return (
+    <Image
+      // Importação de uma imagem
+      // Defina automaticamente a largura e a altura
+      src={profilePic}
+      sizes="100vw"
+      // Faça com que a imagem seja exibida em largura total
+      style={{
+        width: '100%',
+        height: 'auto'
+      }}
+    />
+  )
+}

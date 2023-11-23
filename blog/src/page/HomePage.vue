@@ -5,7 +5,9 @@ import {
   cardTitle_01,
   cardDate_01,
   cardTitle_02,
-  cardDate_02
+  cardDate_02,
+  cardTitle_03,
+  cardDate_03
 } from '@/components/Titles/2023/November/titles'
 
 //Função para formatar um título
@@ -19,6 +21,7 @@ const formatTitle = (title: string) => {
 //Chamando a função formatadora de título
 const formattedTitle_01 = formatTitle(cardTitle_01)
 const formattedTitle_02 = formatTitle(cardTitle_02)
+const formattedTitle_03 = formatTitle(cardTitle_03)
 </script>
 
 <template>
@@ -27,8 +30,12 @@ const formattedTitle_02 = formatTitle(cardTitle_02)
       <CardDefault icon="vi-file-type-vue" :title="cardTitle_01" :datePost="cardDate_01" />
     </RouterLink>
 
-    <RouterLink :to="{ name: 'news2', params: { title: formattedTitle_02 } }">
+    <RouterLink :to="{ name: 'news2', params: { title: formattedTitle_02 } }" >
       <CardDefault icon="vi-file-type-light-next" :title="cardTitle_02" :datePost="cardDate_02" />
+    </RouterLink>
+
+    <RouterLink :to="{ name: 'news3', params: { title: formattedTitle_03 } }">
+      <CardDefault icon="vi-file-type-light-next" :title="cardTitle_03" :datePost="cardDate_03" />
     </RouterLink>
   </div>
 </template>
