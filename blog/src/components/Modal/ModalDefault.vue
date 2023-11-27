@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-let isModalOpened = ref(false)
+// A variável chamada isModalOpened que é um objeto ref do Vue.
+// O valor inicial dessa variável é false, o que significa que o modal está fechado.
+const isModalOpened = ref(false)
 
+// A função openModal é responsável por abrir o modal,
+// e faz isso atribuindo true à propriedade value do objeto isModalOpened
 const openModal = () => {
   isModalOpened.value = true
 }
+
+// a função closeModal é responsável por fechar o modal,
+// e faz isso atribuindo false à propriedade value do objeto isModalOpened
 const closeModal = () => {
   isModalOpened.value = false
 }
@@ -40,10 +47,12 @@ const closeModal = () => {
           </div>
           <div class="mt-4">
             <p class="px-4 mb-4 font-semibold text-base text-justify indent-10 leading-loose">
-              Cantinho do blog foi criado utilizando a tecnologia VueJS 3 e TypeScript, com o intuito
-              especialmente de catalogar e guardar as minhas dúvidas com relação à desenvolvimento
-              de software, outro ponto importante é que também serve para demonstrar e compartilhar de uma
-              forma intuitiva me estimulando a pensar em formas de trazer o conteúdo entendível tanto para pessoas leigas como para profissionais sem deixar de lados os termos técnicos.
+              Cantinho do blog foi criado utilizando a tecnologia VueJS 3 e TypeScript, com o
+              intuito especialmente de catalogar e guardar as minhas dúvidas com relação à
+              desenvolvimento de software, outro ponto importante é que também serve para demonstrar
+              e compartilhar de uma forma intuitiva me estimulando a pensar em formas de trazer o
+              conteúdo entendível tanto para pessoas leigas como para profissionais sem deixar de
+              lados os termos técnicos.
             </p>
           </div>
         </div>

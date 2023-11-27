@@ -1,4 +1,6 @@
 <script setup lang="ts">
+// A função defineProps do Vue para definir as propriedades de um componente.
+// Essas propriedades são usadas para passar dados do componente pai para o componente filho.
 defineProps({
   title: {
     type: String,

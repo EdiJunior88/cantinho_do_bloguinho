@@ -12,15 +12,15 @@ import {
   cardDate_04
 } from '@/components/Titles/2023/November/titles'
 
-//Função para formatar um título
+// Função para formatar um título
 const formatTitle = (title: string) => {
-  //REGEX para substituir todos os caracteres que não são letras minúsculas
-  //ou números por um traço (-). A expressão regular /[^a-z0-9]+/g corresponde
-  //a um ou mais caracteres que não são letras minúsculas ou números.
+  // REGEX para substituir todos os caracteres que não são letras minúsculas
+  // ou números por um traço (-). A expressão regular /[^a-z0-9]+/g corresponde
+  // a um ou mais caracteres que não são letras minúsculas ou números.
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 }
 
-//Chamando a função formatadora de título
+// Chamando a função formatadora de título
 const formattedTitle_01 = formatTitle(cardTitle_01)
 const formattedTitle_02 = formatTitle(cardTitle_02)
 const formattedTitle_03 = formatTitle(cardTitle_03)

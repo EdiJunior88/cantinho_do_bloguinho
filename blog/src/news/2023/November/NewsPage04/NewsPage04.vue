@@ -1,5 +1,5 @@
 <script setup lang="ts">
-/* Data 21/11/2023 */
+/* Data 27/11/2023 */
 import { cardTitle_04, cardDate_04 } from '@/components/Titles/2023/November/titles'
 </script>
 
