@@ -7,3 +7,6 @@ export const cardTitle_02 = 'NextJS 14 + Styled Components - Carregando primeiro
 
 export const cardDate_03 = '22/11/2023'
 export const cardTitle_03 = 'NextJS 14 - Deixando as imagens responsivas com 100% de altura (height)'
+
+export const cardDate_04 = '27/11/2023'
+export const cardTitle_04 = 'Como contribuir pela primeira vez em um projeto Open-Source?'
