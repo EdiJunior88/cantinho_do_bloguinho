@@ -5,3 +5,6 @@ name = "javascript"
 
   [analyzers.meta]
   plugins = ["vue"]
+
+[[transformers]]
+name = "prettier"
