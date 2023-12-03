@@ -57,15 +57,22 @@ import { cardTitle_03, cardDate_03 } from '@/components/Titles/2023/November/tit
       </p>
 
       <p class="py-2">
-        Agora, sabendo algumas das principais características desse componente, vamos ao que interessa. Para deixar a imagem sempre responsiva e com o tamanho correto, basta adicionar a propriedade <span class="marcatexto">sizes="100vw"</span> e também um estilo inline <span class="marcatexto">style</span> com o <span class="marcatexto">width: '100%'</span> e <span class="marcatexto">height: 'auto'</span> igual ao código  a seguir:
+        Agora, sabendo algumas das principais características desse componente, vamos ao que
+        interessa. Para deixar a imagem sempre responsiva e com o tamanho correto, basta adicionar a
+        propriedade <span class="marcatexto">sizes="100vw"</span> e também um estilo inline
+        <span class="marcatexto">style</span> com o <span class="marcatexto">width: '100%'</span> e
+        <span class="marcatexto">height: 'auto'</span> igual ao código a seguir:
       </p>
 
       <img src="./assets/code02.webp" alt="exemplo código" />
 
       <p class="py-2">
-        Se de repente a imagem é grande demais ou então não tem os lados, alturas iguais e você queira modificá-la para deixar responsiva, é só mudar as especificações no <span class="marcatexto">style</span> deixando o <span class="marcatexto">width: 'auto'</span> e modificando a altura <span class="marcatexto">height</span>
+        Se de repente a imagem é grande demais ou então não tem os lados, alturas iguais e você
+        queira modificá-la para deixar responsiva, é só mudar as especificações no
+        <span class="marcatexto">style</span> deixando o
+        <span class="marcatexto">width: 'auto'</span> e modificando a altura
+        <span class="marcatexto">height</span>
       </p>
-
     </section>
   </div>
 </template>
