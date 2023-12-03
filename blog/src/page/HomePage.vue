@@ -46,5 +46,3 @@ const formattedTitle_04 = formatTitle(cardTitle_04)
     </RouterLink>
   </div>
 </template>
-
-<style lang="css" scoped></style>

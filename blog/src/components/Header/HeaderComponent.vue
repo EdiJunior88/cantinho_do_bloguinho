@@ -19,5 +19,3 @@ import Modal from "@/components/Modal/ModalDefault.vue"
     </div>
   </div>
 </template>
-
-<style lang="css" scoped></style>

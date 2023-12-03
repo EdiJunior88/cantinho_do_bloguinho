@@ -26,13 +26,16 @@ import { cardTitle_04, cardDate_04 } from '@/components/Titles/2023/November/tit
       <p class="py-2">
         Em primeiro lugar siga esse link do projeto chamado
         <span class="marcatexto"
-          ><a href="https://github.com/firstcontributions" target="_blank"
+          ><a href="https://github.com/firstcontributions" target="_blank" rel="noopener noreferrer"
             >https://github.com/firstcontributions</a
           ></span
         >
         e procure pelo nome do repositório chamado
         <span class="marcatexto"
-          ><a href="https://github.com/firstcontributions/first-contributions" target="_blank"
+          ><a
+            href="https://github.com/firstcontributions/first-contributions"
+            target="_blank"
+            rel="noopener noreferrer"
             >first-contributions</a
           ></span
         >

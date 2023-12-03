@@ -7,5 +7,3 @@ import HeaderComponent from '@/components/Header/HeaderComponent.vue'
   <!-- Cabeçalho -->
   <HeaderComponent />
 </template>
-
-<style lang="css" scoped></style>
