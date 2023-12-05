@@ -14,53 +14,29 @@ import { cardTitle_12_01, cardDate_12_01 } from '@/components/Titles/2023/12_Dec
 
     <section>
       <p class="py-2">
-        Esse é um tutorial que funciona no <span class="marcatexto">VueJS (v3.3.8)</span> em
-        conjunto com o <span class="marcatexto"> Vite mais recente (v4.5.0) </span>
+        Para a galera que utiliza o CSS na mão <span class="marcatexto">(sem frameworks)</span>, dá
+        para usar uma nova sintaxe no <strong>Media Queries</strong> (chamada de
+        <span class="marcatexto">Media Queries Level 4</span>) que vai facilitar e muito o
+        entendimento relacionado a largura de viewport
+        <code class="codigo">
+          (verifiquem antes a compatibilidade com os navegadores mais antigos)</code
+        >.
       </p>
 
       <p class="py-2">
-        É sempre importante lembrar que você pode configurar corretamente o seu projeto para que
-        facilite certos tipos de ação aumentando a sua produtividade, e um desses tipos de
-        configuração é como podemos melhorar métodos de
-        <span class="marcatexto">chamar pastas / arquivos / imagens</span> dentro de um projeto de
-        forma eficiente e sem se preocupar muito com os subdiretórios, tudo isso através do
-        <span class="marcatexto">path alias (@)</span>
+        Vamos utilizar como um exemplo a seguinte situação: Eu quero que o
+        <span class="marcatexto">texto fique somente com a fonte maior</span> a partir do
+        <span class="marcatexto">tamanho da tela seja maior ou igual a 1200 pixels</span>, nesse
+        caso irei fazer da seguinte maneira:
       </p>
 
-      <p class="py-2">
-        Geralmente chamamos as pastas por caminhos através de pontinhos e barras
-        <span class="marcatexto">(navegação por pastas)</span>, por exemplo
-        <code class="codigo">import { MeuComponente } from "../../pasta/componente.vue"</code>
-        (lembrando o sistema de pesquisa do terminal Linux ou do Windows) mas se preferir, poderá
-        substituir os pontos pelo <span class="marcatexto">prefixo @</span> por exemplo
-        <code class="codigo">import { MeuComponente } from "@/pasta/componente.vue"</code>
-      </p>
-
-      <p class="pt-2 font-medium italic">Exemplo de código com a navegação por pastas:</p>
       <img src="./assets/code01.webp" alt="exemplo código" />
 
-      <p class="pt-2 font-medium italic">Exemplo de código utilizando o path alias @:</p>
-      <img src="./assets/code02.webp" alt="exemplo código" />
-
-      <p>
-        Geralmente após o processo de instalação de um novo projeto VueJS esse tipo de
-        <span class="marcatexto">atalho</span> já é adicionado e configurado automaticamente em seu
-        projeto, mas em caso de dúvidas, acesse o arquivo
-        <code class="codigo">vite.config.ts</code> ou <code class="codigo">vite.config.js</code> e
-        verifique se irá aparecer semelhante a esse código abaixo:
-      </p>
-      <img src="./assets/code03.webp" alt="exemplo código" />
-
-      <p>Agora irei marcar onde o <span class="marcatexto">path (alias)</span> aparecerá:</p>
-      <img src="./assets/code04.webp" alt="exemplo código" />
-
-      <p>
-        O <span class="marcatexto">atalho @</span> é configurado para apontar para o diretório
-        <span class="marcatexto">src</span> do seu projeto. Isso é feito usando a função
-        <code class="codigo">fileURLToPath</code> e <code class="codigo">new URL</code> do
-        <span class="marcatexto">Node.js</span> para criar um caminho absoluto para o diretório
-        <span class="marcatexto">src</span>, ou seja, você poderá indicar em qualquer pasta que
-        esteja dentro da <span class="marcatexto">pasta-mãe src</span>
+      <p class="py-2">
+        Olhando de primeira fica meio difícil interpretar o que diz na parte do código
+        <code class="codigo">@media (min-width: 1200px)</code>, demora um pouco e você percebe que
+        ele diz que a largura da tela seja maior ou igual a 1200 pixels a fonte do texto será de
+        <code class="codigo">3rem</code>.
       </p>
     </section>
   </div>
