@@ -85,5 +85,5 @@ import { cardTitle_12_01, cardDate_12_01 } from '@/components/Titles/2023/12_Dec
 
 img {
   padding: 1rem 0;
-}@/components/Titles/2023/11_November/titles
+}
 </style>

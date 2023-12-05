@@ -172,4 +172,3 @@ img {
   padding: 1rem 0;
 }
 </style>
-@/components/Titles/2023/11_November/titles

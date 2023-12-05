@@ -58,9 +58,8 @@ const formattedTitle_12_01 = formatTitle(cardTitle_12_01)
       <CardDefault icon="vi-file-type-git" :title="cardTitle_11_04" :datePost="cardDate_11_04" />
     </RouterLink>
 
-    <RouterLink :to="{ name: 'news4', params: { title: formattedTitle_12_01 } }">
+    <RouterLink :to="{ name: 'news5', params: { title: formattedTitle_12_01 } }">
       <CardDefault icon="vi-file-type-git" :title="cardTitle_12_01" :datePost="cardDate_12_01" />
     </RouterLink>
   </div>
 </template>
-@/components/Titles/2023/12_December/titles@/components/Titles/2023/11_November/titles
