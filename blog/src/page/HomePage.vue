@@ -33,7 +33,7 @@ const formattedTitle_12_01 = formatTitle(cardTitle_12_01)
 </script>
 
 <template>
-  <div class="mx-auto max-w-screen-md">
+  <div class="mx-auto max-w-screen-md my-10">
     <RouterLink :to="{ name: 'news1', params: { title: formattedTitle_11_01 } }">
       <CardDefault icon="vi-file-type-vue" :title="cardTitle_11_01" :datePost="cardDate_11_01" />
     </RouterLink>
@@ -59,7 +59,7 @@ const formattedTitle_12_01 = formatTitle(cardTitle_12_01)
     </RouterLink>
 
     <RouterLink :to="{ name: 'news5', params: { title: formattedTitle_12_01 } }">
-      <CardDefault icon="vi-file-type-git" :title="cardTitle_12_01" :datePost="cardDate_12_01" />
+      <CardDefault icon="vi-file-type-css" :title="cardTitle_12_01" :datePost="cardDate_12_01" />
     </RouterLink>
   </div>
 </template>

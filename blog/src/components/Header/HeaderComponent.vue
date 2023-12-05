@@ -4,7 +4,7 @@ import Modal from '@/components/Modal/ModalDefault.vue'
 
 <template>
   <div class="bg-header">
-    <div class="mx-auto max-w-screen-md h-20 flex justify-between items-center px-8 mb-10">
+    <div class="mx-auto max-w-screen-md h-20 flex justify-between items-center px-8">
       <div>
         <RouterLink class="text-2xl header-title" to="/">
           <v-icon name="fc-collaboration" scale="2" class="mr-3" />
