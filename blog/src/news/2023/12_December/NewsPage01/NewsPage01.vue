@@ -1,13 +1,15 @@
 <script setup lang="ts">
-/* Data 07/11/2023 */
-import { cardTitle_01, cardDate_01 } from '@/components/Titles/2023/November/titles'
+/* Data 05/12/2023 */
+import { cardTitle_12_01, cardDate_12_01 } from '@/components/Titles/2023/12_December/titles'
 </script>
 
 <template>
   <div class="container mx-auto p-10 w-10/12 rounded-3xl bg-semi-transparent leading-7">
     <header>
-      <div class="text-slate-500 text-xs font-medium uppercase">Publicado em {{ cardDate_01 }}</div>
-      <div class="font-title text-center py-10 font-extrabold text-3xl">{{ cardTitle_01 }}</div>
+      <div class="text-slate-500 text-xs font-medium uppercase">
+        Publicado em {{ cardDate_12_01 }}
+      </div>
+      <div class="font-title text-center py-10 font-extrabold text-3xl">{{ cardTitle_12_01 }}</div>
     </header>
 
     <section>
@@ -83,5 +85,5 @@ import { cardTitle_01, cardDate_01 } from '@/components/Titles/2023/November/tit
 
 img {
   padding: 1rem 0;
-}
+}@/components/Titles/2023/11_November/titles
 </style>
