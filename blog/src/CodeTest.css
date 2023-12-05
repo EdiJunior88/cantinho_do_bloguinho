@@ -10,7 +10,7 @@ tamanho da tela for entre 400px e 1000px
 
 @media (min-width: 400px) and (max-width: 1000px) {
   body {
-    background: red
+    background: red;
   }
 }
 
@@ -18,6 +18,6 @@ tamanho da tela for entre 400px e 1000px
 
 @media (400px <= width <= 1000px) {
   body {
-    background: red
+    background: red;
   }
 }
