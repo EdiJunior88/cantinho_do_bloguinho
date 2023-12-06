@@ -85,8 +85,8 @@ import { cardTitle_12_01, cardDate_12_01 } from '@/components/Titles/2023/12_Dec
       </p>
 
       <p class="py-2">
-        Caso você esteja curioso em implementar essa nova sintaxe em seus códigos CSS, não esqueça de
-        verificar no site <span class="marcatexto">Can In Use</span> através desse link:
+        Caso você esteja curioso em implementar essa nova sintaxe em seus códigos CSS, não esqueça
+        de verificar no site <span class="marcatexto">Can In Use</span> através desse link:
         <code class="codigo">
           <a
             href="https://caniuse.com/?search=CSS%20Media%20Query%20Range%20Syntax"
