@@ -14,6 +14,12 @@
 
 <hr>
 
+<h3>Issues Resolvidas</h3>
+
+[![DeepSource](https://app.deepsource.com/gh/EdiJunior88/cantinho_do_bloguinho.svg/?label=resolved+issues&show_trend=true&token=QTleitP3fDoI-wnc0KQDWqnO)](https://app.deepsource.com/gh/EdiJunior88/cantinho_do_bloguinho/)
+
+<hr>
+
 <h3>Tempo no Projeto</h3>
 
 <p>
