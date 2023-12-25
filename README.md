@@ -10,7 +10,7 @@
 
 <h3>Status do Deploy</h3>
 
-![Vercel](https://vercelbadge.vercel.app/api/EdiJunior88/cantinho_do_bloguinho?style=for-the-badge)
+![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=cantinho-do-bloguinho)
 
 <hr>
 
