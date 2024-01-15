@@ -14,7 +14,7 @@
   "dependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "oh-vue-icons": "^1.0.0-rc3",
-    "vue": "^3.4.6",
+    "vue": "^3.4.14",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
