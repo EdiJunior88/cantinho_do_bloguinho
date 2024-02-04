@@ -27,7 +27,7 @@ Para ver todas as tecnologias [clique aqui](/techstack.md)
 
 <h3>Status do Deploy</h3>
 
-![Vercel Deploy](https://therealsujitk-vercel-badge.vercel.app/?app=cantinho-do-bloguinho)
+<img src="https://therealsujitk-vercel-badge.vercel.app/?app=cantinho-do-bloguinho&style=for-the-badge" alt="Vercel Deploy">
 
 <hr>
 
