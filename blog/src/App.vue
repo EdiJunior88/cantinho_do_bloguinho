@@ -4,10 +4,10 @@ import { RouterView } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 
 /* Componente de analise de views do site pela Vercel */
-import { inject } from '@vercel/analytics';
+import { inject } from '@vercel/analytics'
 
 /* Chamando o Componente de analise de views */
-inject();
+inject()
 </script>
 
 <template>
