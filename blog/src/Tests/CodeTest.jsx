@@ -3,7 +3,7 @@
   utilizando a extensão do VSCode Code Snapshot
 */
 
-import Image from 'next/image'
+/* import Image from 'next/image'
 import profilePic from './me.png'
 
 export default function Page() {
@@ -20,4 +20,4 @@ export default function Page() {
       }}
     />
   )
-}
+} */

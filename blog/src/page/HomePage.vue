@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import CardDefault from '@/components/Cards/CardDefault.vue'
+/* Novembro 2023 */
 import {
   cardTitle_11_23_01,
   cardDate_11_23_01,
@@ -11,7 +12,10 @@ import {
   cardTitle_11_23_04,
   cardDate_11_23_04
 } from '@/components/Titles/2023/11_November/titles'
+/* Dezembro 2023 */
 import { cardTitle_12_23_01, cardDate_12_23_01 } from '@/components/Titles/2023/12_December/titles'
+/* Fevereiro 2024 */
+import { cardTitle_02_24_01, cardDate_02_24_01 } from '@/components/Titles/2024/02_February/titles'
 
 // Função para formatar um título
 const formatTitle = (title: string) => {
@@ -30,6 +34,9 @@ const formattedTitle_11_23_04 = formatTitle(cardTitle_11_23_04)
 
 // Mês Dezembro - 2023
 const formattedTitle_12_23_01 = formatTitle(cardTitle_12_23_01)
+
+// Mês Fevereiro - 2024
+const formattedTitle_02_24_01 = formatTitle(cardTitle_02_24_01)
 </script>
 
 <template>
@@ -71,6 +78,14 @@ const formattedTitle_12_23_01 = formatTitle(cardTitle_12_23_01)
         icon="vi-file-type-css"
         :title="cardTitle_12_23_01"
         :datePost="cardDate_12_23_01"
+      />
+    </RouterLink>
+
+    <RouterLink :to="{ name: 'news6', params: { title: formattedTitle_02_24_01 } }">
+      <CardDefault
+        icon="vi-file-type-nuxt"
+        :title="cardTitle_02_24_01"
+        :datePost="cardDate_02_24_01"
       />
     </RouterLink>
   </div>

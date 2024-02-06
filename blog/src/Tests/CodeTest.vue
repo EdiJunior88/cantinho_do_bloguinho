@@ -3,7 +3,7 @@
   utilizando a extensão do VSCode Code Snapshot
 -->
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import App from './App.vue'
 </script>
 
@@ -12,3 +12,4 @@ import App from './App.vue'
 </template>
 
 <style lang="css" scoped></style>
+ -->

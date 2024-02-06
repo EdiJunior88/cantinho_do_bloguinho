@@ -1,15 +1,17 @@
 <script setup lang="ts">
 /* Data 27/11/2023 */
-import { cardTitle_11_04, cardDate_11_04 } from '@/components/Titles/2023/11_November/titles'
+import { cardTitle_11_23_04, cardDate_11_23_04 } from '@/components/Titles/2023/11_November/titles'
 </script>
 
 <template>
   <div class="container mx-auto p-10 w-10/12 rounded-3xl bg-semi-transparent leading-7">
     <header>
       <div class="text-slate-500 text-xs font-medium uppercase">
-        Publicado em {{ cardDate_11_04 }}
+        Publicado em {{ cardDate_11_23_04 }}
       </div>
-      <div class="font-title text-center py-10 font-extrabold text-3xl">{{ cardTitle_11_04 }}</div>
+      <div class="font-title text-center py-10 font-extrabold text-3xl">
+        {{ cardTitle_11_23_04 }}
+      </div>
     </header>
 
     <section>
