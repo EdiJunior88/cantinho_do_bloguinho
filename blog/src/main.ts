@@ -11,7 +11,14 @@ import {
   ViFileTypeNuxt
 } from 'oh-vue-icons/icons'
 
-addIcons(ViFileTypeVue, FcCollaboration, ViFileTypeLightNext, ViFileTypeGit, ViFileTypeCss, ViFileTypeNuxt)
+addIcons(
+  ViFileTypeVue,
+  FcCollaboration,
+  ViFileTypeLightNext,
+  ViFileTypeGit,
+  ViFileTypeCss,
+  ViFileTypeNuxt
+)
 
 const app = createApp(App)
 
