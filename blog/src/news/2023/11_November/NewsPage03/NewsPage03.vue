@@ -9,7 +9,9 @@ import { cardTitle_11_23_03, cardDate_11_23_03 } from '@/components/Titles/2023/
       <div class="text-slate-500 text-xs font-medium uppercase">
         Publicado em {{ cardDate_11_23_03 }}
       </div>
-      <div class="font-title text-center py-10 font-extrabold text-3xl">{{ cardTitle_11_23_03 }}</div>
+      <div class="font-title text-center py-10 font-extrabold text-3xl">
+        {{ cardTitle_11_23_03 }}
+      </div>
     </header>
 
     <section>
