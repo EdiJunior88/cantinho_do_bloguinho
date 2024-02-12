@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Titillium+Web:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Titillium+Web:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +13,6 @@
     scroll-behavior: smooth;
 
     /* Scrollbar personalizada no Firefox */
-    scrollbar-width: thin;
     scrollbar-color: #0a0094;
 
     /* Scrollbar personalizada no Chrome, Edge e Safari */
@@ -31,8 +31,12 @@
     }
   }
 
+  .font-roboto {
+    font-family: "Roboto", sans-serif;
+  }
+
   .font-title {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: "Titillium Web", sans-serif;
   }
 
   .bg-semi-transparent {
@@ -48,7 +52,7 @@
   }
 
   .header-title {
-    font-family: 'Bungee Spice', sans-serif;
+    font-family: "Bungee Spice", sans-serif;
     background: #00870e;
     background: linear-gradient(to top, #00870e 0%, #0a0094 100%);
     -webkit-background-clip: text;

@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
 // A variável chamada isModalOpened que é um objeto ref do Vue.
 // O valor inicial dessa variável é false, o que significa que o modal está fechado.
-const isModalOpened = ref(false)
+const isModalOpened = ref(false);
 
 // A função openModal é responsável por abrir o modal,
 // e faz isso atribuindo true à propriedade value do objeto isModalOpened
 const openModal = () => {
-  isModalOpened.value = true
-}
+  isModalOpened.value = true;
+};
 
 // a função closeModal é responsável por fechar o modal,
 // e faz isso atribuindo false à propriedade value do objeto isModalOpened
 const closeModal = () => {
-  isModalOpened.value = false
-}
+  isModalOpened.value = false;
+};
 </script>
 
 <template>
@@ -27,12 +27,12 @@ const closeModal = () => {
         v-show="isModalOpened"
         class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50 backdrop-blur-sm"
       >
-        <div class="max-w-2xl p-6 mx-4 bg-white rounded-lg shadow-xl">
+        <div class="mx-4 max-w-2xl rounded-lg bg-white p-6 shadow-xl">
           <div class="flex items-center justify-end">
             <svg
               @click="closeModal"
               xmlns="http://www.w3.org/2000/svg"
-              class="w-8 h-8 cursor-pointer"
+              class="h-8 w-8 cursor-pointer"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -46,13 +46,16 @@ const closeModal = () => {
             </svg>
           </div>
           <div class="mt-4">
-            <p class="px-4 mb-4 font-semibold text-base text-justify indent-10 leading-loose">
-              Cantinho do blog foi criado utilizando a tecnologia VueJS 3 e TypeScript, com o
-              intuito especialmente de catalogar e guardar as minhas dúvidas com relação à
-              desenvolvimento de software, outro ponto importante é que também serve para demonstrar
-              e compartilhar de uma forma intuitiva me estimulando a pensar em formas de trazer o
-              conteúdo entendível tanto para pessoas leigas como para profissionais sem deixar de
-              lados os termos técnicos.
+            <p
+              class="mb-4 px-4 text-justify indent-10 text-base font-semibold leading-loose"
+            >
+              Cantinho do blog foi criado utilizando a tecnologia VueJS 3 e
+              TypeScript, com o intuito especialmente de catalogar e guardar as
+              minhas dúvidas com relação à desenvolvimento de software, outro
+              ponto importante é que também serve para demonstrar e compartilhar
+              de uma forma intuitiva me estimulando a pensar em formas de trazer
+              o conteúdo entendível tanto para pessoas leigas como para
+              profissionais sem deixar de lados os termos técnicos.
             </p>
           </div>
         </div>

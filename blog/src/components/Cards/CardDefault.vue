@@ -5,35 +5,39 @@ defineProps({
   title: {
     type: String,
     require: true,
-    default: ''
+    default: "",
   },
   icon: {
     type: String,
     require: true,
-    default: ''
+    default: "",
   },
   datePost: {
     type: String,
     require: true,
-    default: ''
-  }
-})
+    default: "",
+  },
+});
 </script>
 
 <template>
-  <div class="max-w-3xl mb-1">
+  <div class="mb-1 max-w-3xl">
     <div
-      class="max-w-fit px-2.5 py-2 relative -mb-1 -z-10 text-slate-500 text-xs font-medium rounded-t-lg border border-card"
+      class="border-card relative -z-10 -mb-1 w-[85px] rounded-t-lg border px-2.5 py-2 text-center text-xs font-medium text-slate-500"
     >
       {{ datePost }}
     </div>
     <div
-      class="w-full h-20 flex justify-normal items-stretch rounded-lg border border-card shadow-md"
+      class="border-card flex h-20 w-full items-stretch justify-normal rounded-lg border shadow-md"
     >
-      <div class="w-20 px-2 flex justify-center items-center text-black bg-slate-100 rounded-l-lg">
+      <div
+        class="flex w-[85px] items-center justify-center rounded-l-lg bg-slate-100 px-2 text-black"
+      >
         <v-icon :name="icon" scale="3.5" animation="float" hover />
       </div>
-      <div class="flex items-center pl-3 text-xl font-['Roboto'] font-medium bg-white">
+      <div
+        class="font-roboto flex items-center bg-white px-3 text-lg font-medium"
+      >
         {{ title }}
       </div>
     </div>

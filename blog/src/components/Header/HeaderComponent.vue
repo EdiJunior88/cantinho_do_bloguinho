@@ -1,18 +1,20 @@
 <script setup lang="ts">
-import Modal from '@/components/Modal/ModalDefault.vue'
+import Modal from "@/components/Modal/ModalDefault.vue";
 </script>
 
 <template>
   <div class="bg-header">
-    <div class="mx-auto max-w-screen-md h-20 flex justify-between items-center px-8">
+    <div
+      class="mx-auto flex h-20 max-w-screen-md items-center justify-between px-8"
+    >
       <div>
-        <RouterLink class="text-2xl header-title" to="/">
+        <RouterLink class="header-title text-2xl" to="/">
           <v-icon name="fc-collaboration" scale="2" class="mr-3" />
           Cantinho do Bloguinho</RouterLink
         >
       </div>
 
-      <div class="flex gap-7 font-bold text-lg">
+      <div class="flex gap-7 text-lg font-bold">
         <RouterLink to="/">Home</RouterLink>
         <Modal />
       </div>
