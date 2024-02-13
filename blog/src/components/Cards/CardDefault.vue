@@ -36,7 +36,7 @@ defineProps({
         <v-icon :name="icon" scale="3.5" animation="float" hover />
       </div>
       <div
-        class="font-roboto flex items-center bg-white px-3 text-lg font-medium"
+        class="font-roboto flex items-center hyphens-auto break-words bg-white p-3 text-lg font-medium"
       >
         {{ title }}
       </div>
