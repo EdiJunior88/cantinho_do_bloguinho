@@ -16,7 +16,7 @@
     "@vercel/analytics": "^1.2.2",
     "oh-vue-icons": "^1.0.0-rc3",
     "vue": "^3.4.20",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.7.2",
