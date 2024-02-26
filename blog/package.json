@@ -15,7 +15,7 @@
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "@vercel/analytics": "^1.2.2",
     "oh-vue-icons": "^1.0.0-rc3",
-    "vue": "^3.4.19",
+    "vue": "^3.4.20",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
