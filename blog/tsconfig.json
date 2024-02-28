@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog",
     "paths": {
-      "@components/*": ["src/components/*"]
+      "@/components/*": ["src/components/*"]
     },
     "jsx": "preserve"
   }
