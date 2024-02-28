@@ -1,3 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Titillium+Web:wght@300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    color: #0a0094;
+
+    scroll-behavior: smooth;
+
+    /* Scrollbar personalizada no Firefox */
+    scrollbar-color: #0a0094;
+
+    /* Scrollbar personalizada no Chrome, Edge e Safari */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #a0db44;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #0a0094;
+      border-radius: 20px;
+      border: 3px solid #0a0094;
+    }
+  }
+
+  .bg-semi-transparent {
+    background: #d4d4d418;
+  }
+
+  .bg-header {
+    background: #a0db44;
+  }
+
+  .border-card {
+    border-color: #1456fc23;
+  }
+}
