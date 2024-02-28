@@ -1,3 +1,17 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.astro"
+  ],
+  "compilerOptions": {
+    "baseUrl": "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ]
+    },
+    "jsx": "preserve"
+  }
 }
