@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  defineProps(["title"]);
+defineProps(["title"]);
 </script>
 
 <template>
