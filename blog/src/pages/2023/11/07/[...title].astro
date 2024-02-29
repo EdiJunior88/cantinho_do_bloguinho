@@ -5,6 +5,21 @@ import Layout from "@/layouts/Layout.astro";
 /* Title - TypeScript */
 import { titleNews, formateTitle, formateDate } from "@/pages/2023/11/07/title";
 
+/* CSS Global - TailWindCSS */
+import "@/css/style.css";
+
+/* Components - Vue */
+import MarkText from "@/components/Text/MarkText.vue";
+import ExampleText from "@/components/Text/ExampleText.vue";
+import CodeText from "@/components/Text/CodeText.vue";
+
+/* Codes - Markdown */
+import Code01 from "./Codes/code01.md";
+import Code02 from "./Codes/code02.md";
+import Code03 from "./Codes/code03.md";
+import Code04 from "./Codes/code04.md";
+import Code05 from "./Codes/code05.md";
+
 export function getStaticPaths() {
   formateTitle;
   return [{ params: { title: formateTitle } }];
@@ -14,8 +29,78 @@ const { title } = Astro.params;
 ---
 
 <Layout title={title}>
-  <a href="/">LINK PAGINA HOME</a>
-  <h1>{titleNews}</h1>
-  <h2>{formateDate()}</h2>
-  <p>Página 2 do Astro</p>
+  <div class="container mx-auto max-w-screen-lg rounded-lg bg-white p-8">
+    <header class="flex flex-col gap-10 pb-10">
+      <h2 class="text-sm font-medium text-blue-900">
+        Publicado em {formateDate()}
+      </h2>
+      <h1 class="font-title text-center text-3xl font-semibold">{titleNews}</h1>
+    </header>
+
+    <section class="flex flex-col gap-4 hyphens-auto break-words leading-loose">
+      <p>
+        Esse é um tutorial que funciona no <MarkText>VueJS (v3.3.8)</MarkText> em
+        conjunto com o <MarkText>Vite mais recente (v4.5.0)</MarkText>
+      </p>
+
+      <p>
+        É sempre importante lembrar que você pode configurar corretamente o seu
+        projeto para que facilite certos tipos de ação aumentando a sua
+        produtividade, e um desses tipos de configuração é como podemos melhorar
+        métodos de <MarkText>chamar pastas / arquivos / imagens</MarkText> dentro
+        de um projeto de forma eficiente e sem se preocupar muito com os subdiretórios,
+        tudo isso através do path alias (@)
+      </p>
+
+      <p>
+        Geralmente chamamos as pastas por caminhos através de pontinhos e barras
+        <MarkText>(navegação por pastas)</MarkText>, por exemplo
+
+        <Code01 />
+
+        (lembrando o sistema de pesquisa do terminal Linux ou do Windows) mas se
+        preferir, poderá substituir os pontos pelo prefixo @ por exemplo
+
+        <Code02 />
+      </p>
+
+      <p>
+        <ExampleText>Exemplo de código com a navegação por pastas:</ExampleText>
+
+        <Code03 />
+      </p>
+
+      <p>
+        <ExampleText>Exemplo de código utilizando o path alias @:</ExampleText>
+
+        <Code04 />
+      </p>
+
+      <p>
+        Geralmente após o processo de instalação de um novo projeto VueJS esse
+        tipo de <MarkText>atalho</MarkText> já é adicionado e configurado automaticamente
+        em seu projeto, mas em caso de dúvidas, acesse o arquivo <CodeText>
+          vite.config.ts
+        </CodeText> ou
+        <CodeText>vite.config.js</CodeText> e verifique se irá aparecer semelhante
+        a esse código abaixo:
+      </p>
+
+      <Code05 />
+
+      <p>
+        O <MarkText>atalho @</MarkText> é configurado para apontar para o diretório
+        <MarkText>src</MarkText> do seu projeto. Isso é feito usando a função <CodeText
+        >
+          fileURLToPath
+        </CodeText> e
+        <CodeText>new URL</CodeText> do
+        <MarkText>Node.js</MarkText>
+        para criar um caminho absoluto para o diretório <MarkText>
+          src
+        </MarkText>, ou seja, você poderá indicar em qualquer pasta que esteja
+        dentro da <MarkText>pasta-mãe src</MarkText>
+      </p>
+    </section>
+  </div>
 </Layout>

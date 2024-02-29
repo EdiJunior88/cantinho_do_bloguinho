@@ -14,6 +14,9 @@ dependencies:
   "@astrojs/vue":
     specifier: ^4.0.8
     version: 4.0.8(@babel/core@7.23.9)(astro@4.4.5)(vite@5.1.4)(vue@3.4.21)
+  "@tailwindcss/nesting":
+    specifier: 0.0.0-insiders.565cd3e
+    version: 0.0.0-insiders.565cd3e(postcss@8.4.35)
   astro:
     specifier: ^4.4.5
     version: 4.4.5(typescript@5.3.3)
@@ -23,6 +26,9 @@ dependencies:
   astro-iconify:
     specifier: ^1.2.0
     version: 1.2.0
+  autoprefixer:
+    specifier: ^10.4.17
+    version: 10.4.17(postcss@8.4.35)
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -31,6 +37,18 @@ dependencies:
     version: 3.4.21(typescript@5.3.3)
 
 devDependencies:
+  "@types/autoprefixer":
+    specifier: ^10.2.0
+    version: 10.2.0(postcss@8.4.35)
+  "@types/postcss-import":
+    specifier: ^14.0.3
+    version: 14.0.3
+  "@types/tailwindcss":
+    specifier: ^3.1.0
+    version: 3.1.0
+  postcss-nesting:
+    specifier: ^12.0.4
+    version: 12.0.4(postcss@8.4.35)
   prettier:
     specifier: ^3.2.5
     version: 3.2.5
@@ -645,6 +663,18 @@ packages:
       "@babel/helper-validator-identifier": 7.22.20
       to-fast-properties: 2.0.0
     dev: false
+
+  /@csstools/selector-specificity@3.0.2(postcss-selector-parser@6.0.15):
+    resolution:
+      {
+        integrity: sha512-RpHaZ1h9LE7aALeQXmXrJkRG84ZxIsctEN2biEUmFyKpzFM3zZ35eUMcIzZFsw/2olQE6v69+esEqU2f1MKycg==,
+      }
+    engines: { node: ^14 || ^16 || >=18 }
+    peerDependencies:
+      postcss-selector-parser: ^6.0.13
+    dependencies:
+      postcss-selector-parser: 6.0.15
+    dev: true
 
   /@ctrl/tinycolor@3.6.1:
     resolution:
@@ -1291,6 +1321,18 @@ packages:
       }
     dev: false
 
+  /@tailwindcss/nesting@0.0.0-insiders.565cd3e(postcss@8.4.35):
+    resolution:
+      {
+        integrity: sha512-WhHoFBx19TnH/c+xLwT/sxei6+4RpdfiyG3MYXfmLaMsADmVqBkF7B6lDalgZD9YdM459MF7DtxVbWkOrV7IaQ==,
+      }
+    peerDependencies:
+      postcss: ^8.2.15
+    dependencies:
+      postcss: 8.4.35
+      postcss-nested: 5.0.6(postcss@8.4.35)
+    dev: false
+
   /@trysound/sax@0.2.0:
     resolution:
       {
@@ -1298,6 +1340,18 @@ packages:
       }
     engines: { node: ">=10.13.0" }
     dev: false
+
+  /@types/autoprefixer@10.2.0(postcss@8.4.35):
+    resolution:
+      {
+        integrity: sha512-ClU0uw3HhUra890K4xcf2IQxD6w0WOjPIaKb8jrRXYPHvvUW1P5dGufPlDtTo5gtWPWH+4L6tSBAoAKVf93uBQ==,
+      }
+    deprecated: This is a stub types definition. autoprefixer provides its own type definitions, so you do not need this installed.
+    dependencies:
+      autoprefixer: 10.4.17(postcss@8.4.35)
+    transitivePeerDependencies:
+      - postcss
+    dev: true
 
   /@types/babel__core@7.20.5:
     resolution:
@@ -1414,6 +1468,27 @@ packages:
         integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==,
       }
     dev: false
+
+  /@types/postcss-import@14.0.3:
+    resolution:
+      {
+        integrity: sha512-raZhRVTf6Vw5+QbmQ7LOHSDML71A5rj4+EqDzAbrZPfxfoGzFxMHRCq16VlddGIZpHELw0BG4G0YE2ANkdZiIQ==,
+      }
+    dependencies:
+      postcss: 8.4.35
+    dev: true
+
+  /@types/tailwindcss@3.1.0:
+    resolution:
+      {
+        integrity: sha512-JxPzrm609hzvF4nmOI3StLjbBEP3WWQxDDJESqR1nh94h7gyyy3XSl0hn5RBMJ9mPudlLjtaXs5YEBtLw7CnPA==,
+      }
+    deprecated: This is a stub types definition. tailwindcss provides its own type definitions, so you do not need this installed.
+    dependencies:
+      tailwindcss: 3.4.1
+    transitivePeerDependencies:
+      - ts-node
+    dev: true
 
   /@types/tar@6.1.11:
     resolution:
@@ -2002,7 +2077,6 @@ packages:
       picocolors: 1.0.0
       postcss: 8.4.35
       postcss-value-parser: 4.2.0
-    dev: false
 
   /axios@1.6.7:
     resolution:
@@ -2189,7 +2263,6 @@ packages:
       electron-to-chromium: 1.4.684
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
-    dev: false
 
   /buffer-crc32@0.2.13:
     resolution:
@@ -2248,7 +2321,6 @@ packages:
       {
         integrity: sha512-PCzRMei/vXjJyL5mJtzNiUCKP59dm8Apqc3PH8gJkMnMXZGox93RbE76jHsmLwmIo6/3nsYIpJtx0O7u5PqFuQ==,
       }
-    dev: false
 
   /ccount@2.0.1:
     resolution:
@@ -2798,7 +2870,6 @@ packages:
       {
         integrity: sha512-MoDE0pUsIzTewI96Vbv84sTkER9Nbp58pa1K7Ub03s6+2HvuJ+jbnxcLJm22mpomJe+5PWtiPXqhbU5ZkyHU5A==,
       }
-    dev: false
 
   /emmet@2.4.6:
     resolution:
@@ -2894,7 +2965,6 @@ packages:
         integrity: sha512-ErCHMCae19vR8vQGe50xIsVomy19rg6gFu3+r3jkEO46suLMWBksvVyoGgQV+jOfl84ZSOSlmv6Gxa89PmTGmA==,
       }
     engines: { node: ">=6" }
-    dev: false
 
   /escape-string-regexp@1.0.5:
     resolution:
@@ -3185,7 +3255,6 @@ packages:
       {
         integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==,
       }
-    dev: false
 
   /fs-constants@1.0.0:
     resolution:
@@ -4847,7 +4916,6 @@ packages:
       {
         integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==,
       }
-    dev: false
 
   /normalize-path@3.0.0:
     resolution:
@@ -4862,7 +4930,6 @@ packages:
         integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==,
       }
     engines: { node: ">=0.10.0" }
-    dev: false
 
   /npm-run-path@4.0.1:
     resolution:
@@ -5237,6 +5304,19 @@ packages:
       postcss: 8.4.35
       yaml: 2.4.0
 
+  /postcss-nested@5.0.6(postcss@8.4.35):
+    resolution:
+      {
+        integrity: sha512-rKqm2Fk0KbA8Vt3AdGN0FB9OBOMDVajMG6ZCf/GoHgdxUJ4sBFp0A/uMIRm+MJUdo33YXEtjqIz8u7DAp8B7DA==,
+      }
+    engines: { node: ">=12.0" }
+    peerDependencies:
+      postcss: ^8.2.14
+    dependencies:
+      postcss: 8.4.35
+      postcss-selector-parser: 6.0.15
+    dev: false
+
   /postcss-nested@6.0.1(postcss@8.4.35):
     resolution:
       {
@@ -5248,6 +5328,20 @@ packages:
     dependencies:
       postcss: 8.4.35
       postcss-selector-parser: 6.0.15
+
+  /postcss-nesting@12.0.4(postcss@8.4.35):
+    resolution:
+      {
+        integrity: sha512-WuCe0KnP4vKjLZK8VNoUWKL8ZLOv/5jiM94mHcI3VszLropHwmjotdUyP/ObzqZpXuQKP2Jf9R12vIHKFSStKw==,
+      }
+    engines: { node: ^14 || ^16 || >=18 }
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      "@csstools/selector-specificity": 3.0.2(postcss-selector-parser@6.0.15)
+      postcss: 8.4.35
+      postcss-selector-parser: 6.0.15
+    dev: true
 
   /postcss-selector-parser@6.0.15:
     resolution:
@@ -6554,7 +6648,6 @@ packages:
       browserslist: 4.23.0
       escalade: 3.1.2
       picocolors: 1.0.0
-    dev: false
 
   /util-deprecate@1.0.2:
     resolution:
