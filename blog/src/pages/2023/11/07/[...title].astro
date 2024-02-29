@@ -1,0 +1,21 @@
+---
+/* Layout - Astro */
+import Layout from "@/layouts/Layout.astro";
+
+/* Title - TypeScript */
+import { titleNews, formateTitle, formateDate } from "@/pages/2023/11/07/title";
+
+export function getStaticPaths() {
+  formateTitle;
+  return [{ params: { title: formateTitle } }];
+}
+
+const { title } = Astro.params;
+---
+
+<Layout title={title}>
+  <a href="/">LINK PAGINA HOME</a>
+  <h1>{titleNews}</h1>
+  <h2>{formateDate()}</h2>
+  <p>Página 2 do Astro</p>
+</Layout>

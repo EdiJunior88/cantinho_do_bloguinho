@@ -1,4 +1,8 @@
 ---
+/* Componente - Astro */
+import Header from "@/components/Header/Header.astro";
+
+/* Interface - TypeScript */
 interface Props {
   title: string;
 }
@@ -17,6 +21,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-slate-200">
+    <Header />
     <slot />
   </body>
 </html>

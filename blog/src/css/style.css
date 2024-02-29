@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&family=Titillium+Web:wght@300&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,10 +29,6 @@
 
   .bg-semi-transparent {
     background: #d4d4d418;
-  }
-
-  .bg-header {
-    background: #a0db44;
   }
 
   .border-card {

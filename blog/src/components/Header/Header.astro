@@ -1,13 +1,31 @@
 ---
-/* Componentes */
+/* Componentes Header - Vue */
 import HeaderVue from "@/components/Header/Header.vue";
 
-/* Ícones */
+/* Ícones - Astro */
 import { Icon } from "astro-iconify";
+
+/* Modal - Vue */
+import Modal from "../Modal/Modal.vue";
 ---
 
-<header>
-  <HeaderVue title="Cantinho do Bloguinho" home="Home" about="Sobre">
-    <Icon name="flat-color-icons:collaboration" size="50" />
-  </HeaderVue>
+<header class="flex h-20 w-full items-center bg-[#a0db44] px-8 mb-8">
+  <div class="mx-auto flex max-w-screen-xl sm:gap-32 lg:gap-96">
+    <HeaderVue title="Cantinho do Bloguinho" home="Home" about="Sobre">
+      <Icon name="flat-color-icons:collaboration" size="50" />
+    </HeaderVue>
+
+    <div class="font-roboto flex items-center gap-7 text-lg font-semibold">
+      <a href="/" target="_self"><span>Home</span></a>
+      <Modal client:load />
+    </div>
+  </div>
 </header>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+  .font-roboto {
+    font-family: "Roboto", sans-serif;
+  }
+</style>
