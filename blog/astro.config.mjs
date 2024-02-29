@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import vue from "@astrojs/vue";
 import astroExpressiveCode from "astro-expressive-code";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,4 +15,10 @@ export default defineConfig({
       themes: ["dracula-soft"],
     }),
   ],
+  output: "server",
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 });
