@@ -1,4 +1,13 @@
-import { A as AstroError, E as ExpectedImage, L as LocalImageUsedWrongly, M as MissingImageDimension, U as UnsupportedImageFormat, I as IncompatibleDescriptorOptions, a as UnsupportedImageConversion, b as MissingSharp } from '../astro_yvkYO_vT.mjs';
+import {
+  A as AstroError,
+  E as ExpectedImage,
+  L as LocalImageUsedWrongly,
+  M as MissingImageDimension,
+  U as UnsupportedImageFormat,
+  I as IncompatibleDescriptorOptions,
+  a as UnsupportedImageConversion,
+  b as MissingSharp,
+} from "../astro_yvkYO_vT.mjs";
 
 function appendForwardSlash(path) {
   return path.endsWith("/") ? path : path + "/";
@@ -22,15 +31,18 @@ function isString(path) {
   return typeof path === "string" || path instanceof String;
 }
 function joinPaths(...paths) {
-  return paths.filter(isString).map((path, i) => {
-    if (i === 0) {
-      return removeTrailingForwardSlash(path);
-    } else if (i === paths.length - 1) {
-      return removeLeadingForwardSlash(path);
-    } else {
-      return trimSlashes(path);
-    }
-  }).join("/");
+  return paths
+    .filter(isString)
+    .map((path, i) => {
+      if (i === 0) {
+        return removeTrailingForwardSlash(path);
+      } else if (i === paths.length - 1) {
+        return removeLeadingForwardSlash(path);
+      } else {
+        return trimSlashes(path);
+      }
+    })
+    .join("/");
 }
 function isRemotePath(src) {
   return /^(http|ftp|https|ws):?\/\//.test(src) || src.startsWith("data:");
@@ -47,7 +59,7 @@ const VALID_SUPPORTED_FORMATS = [
   "webp",
   "gif",
   "svg",
-  "avif"
+  "avif",
 ];
 const DEFAULT_OUTPUT_FORMAT = "webp";
 const DEFAULT_HASH_PROPS = ["src", "width", "height", "format", "quality"];
@@ -60,7 +72,12 @@ function isRemoteImage(src) {
 }
 
 function matchPattern(url, remotePattern) {
-  return matchProtocol(url, remotePattern.protocol) && matchHostname(url, remotePattern.hostname, true) && matchPort(url, remotePattern.port) && matchPathname(url, remotePattern.pathname, true);
+  return (
+    matchProtocol(url, remotePattern.protocol) &&
+    matchHostname(url, remotePattern.hostname, true) &&
+    matchPort(url, remotePattern.port) &&
+    matchPathname(url, remotePattern.pathname, true)
+  );
 }
 function matchPort(url, port) {
   return !port || port === url.port;
@@ -75,10 +92,15 @@ function matchHostname(url, hostname, allowWildcard) {
     return hostname === url.hostname;
   } else if (hostname.startsWith("**.")) {
     const slicedHostname = hostname.slice(2);
-    return slicedHostname !== url.hostname && url.hostname.endsWith(slicedHostname);
+    return (
+      slicedHostname !== url.hostname && url.hostname.endsWith(slicedHostname)
+    );
   } else if (hostname.startsWith("*.")) {
     const slicedHostname = hostname.slice(1);
-    const additionalSubdomains = url.hostname.replace(slicedHostname, "").split(".").filter(Boolean);
+    const additionalSubdomains = url.hostname
+      .replace(slicedHostname, "")
+      .split(".")
+      .filter(Boolean);
     return additionalSubdomains.length === 1;
   }
   return false;
@@ -90,22 +112,26 @@ function matchPathname(url, pathname, allowWildcard) {
     return pathname === url.pathname;
   } else if (pathname.endsWith("/**")) {
     const slicedPathname = pathname.slice(0, -2);
-    return slicedPathname !== url.pathname && url.pathname.startsWith(slicedPathname);
+    return (
+      slicedPathname !== url.pathname && url.pathname.startsWith(slicedPathname)
+    );
   } else if (pathname.endsWith("/*")) {
     const slicedPathname = pathname.slice(0, -1);
-    const additionalPathChunks = url.pathname.replace(slicedPathname, "").split("/").filter(Boolean);
+    const additionalPathChunks = url.pathname
+      .replace(slicedPathname, "")
+      .split("/")
+      .filter(Boolean);
     return additionalPathChunks.length === 1;
   }
   return false;
 }
-function isRemoteAllowed(src, {
-  domains = [],
-  remotePatterns = []
-}) {
-  if (!isRemotePath(src))
-    return false;
+function isRemoteAllowed(src, { domains = [], remotePatterns = [] }) {
+  if (!isRemotePath(src)) return false;
   const url = new URL(src);
-  return domains.some((domain) => matchHostname(url, domain)) || remotePatterns.some((remotePattern) => matchPattern(url, remotePattern));
+  return (
+    domains.some((domain) => matchHostname(url, domain)) ||
+    remotePatterns.some((remotePattern) => matchPattern(url, remotePattern))
+  );
 }
 
 function isLocalService(service) {
@@ -124,21 +150,27 @@ function parseQuality(quality) {
 const baseService = {
   propertiesToHash: DEFAULT_HASH_PROPS,
   validateOptions(options) {
-    if (!options.src || typeof options.src !== "string" && typeof options.src !== "object") {
+    if (
+      !options.src ||
+      (typeof options.src !== "string" && typeof options.src !== "object")
+    ) {
       throw new AstroError({
         ...ExpectedImage,
         message: ExpectedImage.message(
           JSON.stringify(options.src),
           typeof options.src,
-          JSON.stringify(options, (_, v) => v === void 0 ? null : v)
-        )
+          JSON.stringify(options, (_, v) => (v === void 0 ? null : v)),
+        ),
       });
     }
     if (!isESMImportedImage(options.src)) {
-      if (options.src.startsWith("/@fs/") || !isRemotePath(options.src) && !options.src.startsWith("/")) {
+      if (
+        options.src.startsWith("/@fs/") ||
+        (!isRemotePath(options.src) && !options.src.startsWith("/"))
+      ) {
         throw new AstroError({
           ...LocalImageUsedWrongly,
-          message: LocalImageUsedWrongly.message(options.src)
+          message: LocalImageUsedWrongly.message(options.src),
         });
       }
       let missingDimension;
@@ -152,7 +184,7 @@ const baseService = {
       if (missingDimension) {
         throw new AstroError({
           ...MissingImageDimension,
-          message: MissingImageDimension.message(missingDimension, options.src)
+          message: MissingImageDimension.message(missingDimension, options.src),
         });
       }
     } else {
@@ -162,8 +194,8 @@ const baseService = {
           message: UnsupportedImageFormat.message(
             options.src.format,
             options.src.src,
-            VALID_SUPPORTED_FORMATS
-          )
+            VALID_SUPPORTED_FORMATS,
+          ),
         });
       }
       if (options.widths && options.densities) {
@@ -172,28 +204,39 @@ const baseService = {
       if (options.src.format === "svg") {
         options.format = "svg";
       }
-      if (options.src.format === "svg" && options.format !== "svg" || options.src.format !== "svg" && options.format === "svg") {
+      if (
+        (options.src.format === "svg" && options.format !== "svg") ||
+        (options.src.format !== "svg" && options.format === "svg")
+      ) {
         throw new AstroError(UnsupportedImageConversion);
       }
     }
     if (!options.format) {
       options.format = DEFAULT_OUTPUT_FORMAT;
     }
-    if (options.width)
-      options.width = Math.round(options.width);
-    if (options.height)
-      options.height = Math.round(options.height);
+    if (options.width) options.width = Math.round(options.width);
+    if (options.height) options.height = Math.round(options.height);
     return options;
   },
   getHTMLAttributes(options) {
     const { targetWidth, targetHeight } = getTargetDimensions(options);
-    const { src, width, height, format, quality, densities, widths, formats, ...attributes } = options;
+    const {
+      src,
+      width,
+      height,
+      format,
+      quality,
+      densities,
+      widths,
+      formats,
+      ...attributes
+    } = options;
     return {
       ...attributes,
       width: targetWidth,
       height: targetHeight,
       loading: attributes.loading ?? "lazy",
-      decoding: attributes.decoding ?? "async"
+      decoding: attributes.decoding ?? "async",
     };
   },
   getSrcSet(options) {
@@ -221,19 +264,21 @@ const baseService = {
           return parseFloat(density);
         }
       });
-      const densityWidths = densityValues.sort().map((density) => Math.round(targetWidth * density));
+      const densityWidths = densityValues
+        .sort()
+        .map((density) => Math.round(targetWidth * density));
       allWidths.push(
         ...densityWidths.map((width, index) => ({
           maxTargetWidth: Math.min(width, maxWidth),
-          descriptor: `${densityValues[index]}x`
-        }))
+          descriptor: `${densityValues[index]}x`,
+        })),
       );
     } else if (widths) {
       allWidths.push(
         ...widths.map((width) => ({
           maxTargetWidth: Math.min(width, maxWidth),
-          descriptor: `${width}w`
-        }))
+          descriptor: `${width}w`,
+        })),
       );
     }
     for (const { maxTargetWidth, descriptor } of allWidths) {
@@ -250,8 +295,8 @@ const baseService = {
         transform: srcSetTransform,
         descriptor,
         attributes: {
-          type: `image/${targetFormat}`
-        }
+          type: `image/${targetFormat}`,
+        },
       });
     }
     return srcSet;
@@ -269,7 +314,7 @@ const baseService = {
       w: "width",
       h: "height",
       q: "quality",
-      f: "format"
+      f: "format",
     };
     Object.entries(params).forEach(([param, key]) => {
       options[key] && searchParams.append(param, options[key].toString());
@@ -287,10 +332,10 @@ const baseService = {
       width: params.has("w") ? parseInt(params.get("w")) : void 0,
       height: params.has("h") ? parseInt(params.get("h")) : void 0,
       format: params.get("f"),
-      quality: params.get("q")
+      quality: params.get("q"),
     };
     return transform;
-  }
+  },
 };
 function getTargetDimensions(options) {
   let targetWidth = options.width;
@@ -308,7 +353,7 @@ function getTargetDimensions(options) {
   }
   return {
     targetWidth,
-    targetHeight
+    targetHeight,
   };
 }
 
@@ -317,12 +362,12 @@ const qualityTable = {
   low: 25,
   mid: 50,
   high: 80,
-  max: 100
+  max: 100,
 };
 async function loadSharp() {
   let sharpImport;
   try {
-    sharpImport = (await import('sharp')).default;
+    sharpImport = (await import("sharp")).default;
   } catch (e) {
     throw new AstroError(MissingSharp);
   }
@@ -335,15 +380,13 @@ const sharpService = {
   getHTMLAttributes: baseService.getHTMLAttributes,
   getSrcSet: baseService.getSrcSet,
   async transform(inputBuffer, transformOptions, config) {
-    if (!sharp)
-      sharp = await loadSharp();
+    if (!sharp) sharp = await loadSharp();
     const transform = transformOptions;
-    if (transform.format === "svg")
-      return { data: inputBuffer, format: "svg" };
+    if (transform.format === "svg") return { data: inputBuffer, format: "svg" };
     const result = sharp(inputBuffer, {
       failOnError: false,
       pages: -1,
-      limitInputPixels: config.service.config.limitInputPixels
+      limitInputPixels: config.service.config.limitInputPixels,
     });
     result.rotate();
     if (transform.height && !transform.width) {
@@ -358,7 +401,10 @@ const sharpService = {
         if (typeof parsedQuality === "number") {
           quality = parsedQuality;
         } else {
-          quality = transform.quality in qualityTable ? qualityTable[transform.quality] : void 0;
+          quality =
+            transform.quality in qualityTable
+              ? qualityTable[transform.quality]
+              : void 0;
         }
       }
       result.toFormat(transform.format, { quality });
@@ -366,15 +412,36 @@ const sharpService = {
     const { data, info } = await result.toBuffer({ resolveWithObject: true });
     return {
       data,
-      format: info.format
+      format: info.format,
     };
-  }
+  },
 };
 var sharp_default = sharpService;
 
-const sharp$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
-  __proto__: null,
-  default: sharp_default
-}, Symbol.toStringTag, { value: 'Module' }));
+const sharp$1 = /*#__PURE__*/ Object.freeze(
+  /*#__PURE__*/ Object.defineProperty(
+    {
+      __proto__: null,
+      default: sharp_default,
+    },
+    Symbol.toStringTag,
+    { value: "Module" },
+  ),
+);
 
-export { DEFAULT_HASH_PROPS as D, isESMImportedImage as a, isLocalService as b, isRemotePath as c, isRemoteAllowed as d, appendForwardSlash as e, collapseDuplicateSlashes as f, sharp$1 as g, isRemoteImage as i, joinPaths as j, prependForwardSlash as p, removeTrailingForwardSlash as r, slash as s, trimSlashes as t };
+export {
+  DEFAULT_HASH_PROPS as D,
+  isESMImportedImage as a,
+  isLocalService as b,
+  isRemotePath as c,
+  isRemoteAllowed as d,
+  appendForwardSlash as e,
+  collapseDuplicateSlashes as f,
+  sharp$1 as g,
+  isRemoteImage as i,
+  joinPaths as j,
+  prependForwardSlash as p,
+  removeTrailingForwardSlash as r,
+  slash as s,
+  trimSlashes as t,
+};
