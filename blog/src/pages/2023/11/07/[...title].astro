@@ -31,7 +31,7 @@ const { title } = Astro.params;
 <Layout title={title}>
   <div class="container mx-auto max-w-screen-lg rounded-lg bg-white p-8">
     <header class="flex flex-col gap-10 pb-10">
-      <h2 class="text-sm font-medium text-blue-900">
+      <h2 class="text-sm font-medium text-[#4141b1]">
         Publicado em {formateDate()}
       </h2>
       <h1 class="font-title text-center text-3xl font-semibold">{titleNews}</h1>
@@ -49,7 +49,7 @@ const { title } = Astro.params;
         produtividade, e um desses tipos de configuração é como podemos melhorar
         métodos de <MarkText>chamar pastas / arquivos / imagens</MarkText> dentro
         de um projeto de forma eficiente e sem se preocupar muito com os subdiretórios,
-        tudo isso através do path alias (@)
+        tudo isso através do <MarkText>path alias (@)</MarkText>
       </p>
 
       <p>
@@ -59,7 +59,8 @@ const { title } = Astro.params;
         <Code01 />
 
         (lembrando o sistema de pesquisa do terminal Linux ou do Windows) mas se
-        preferir, poderá substituir os pontos pelo prefixo @ por exemplo
+        preferir, poderá substituir os pontos pelo prefixo @ "arroba" por
+        exemplo
 
         <Code02 />
       </p>
