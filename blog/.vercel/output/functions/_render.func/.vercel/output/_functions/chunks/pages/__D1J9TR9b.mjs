@@ -112,11 +112,15 @@ function _sfc_ssrRender$4(
   $options,
 ) {
   _push(
-    `<div${ssrRenderAttrs(mergeProps({ class: "flex items-center gap-3" }, _attrs))} data-v-094adf9a>`,
+    `<div${ssrRenderAttrs(
+      mergeProps({ class: "flex items-center gap-3" }, _attrs),
+    )} data-v-094adf9a>`,
   );
   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
   _push(
-    `<h1 class="font-header text-2xl" data-v-094adf9a>${ssrInterpolate($props.title)}</h1></div>`,
+    `<h1 class="font-header text-2xl" data-v-094adf9a>${ssrInterpolate(
+      $props.title,
+    )}</h1></div>`,
   );
 }
 const _sfc_setup$4 = _sfc_main$4.setup;
@@ -1615,7 +1619,9 @@ function encodeXML(str) {
       ret += str.substring(lastIdx, i) + next;
       lastIdx = i + 1;
     } else {
-      ret += `${str.substring(lastIdx, i)}&#x${getCodePoint(str, i).toString(16)};`;
+      ret += `${str.substring(lastIdx, i)}&#x${getCodePoint(str, i).toString(
+        16,
+      )};`;
       // Increase by 1 if we have a surrogate pair
       lastIdx = xmlReplacer.lastIndex += Number((char & 0xfc00) === 0xd800);
     }
@@ -5294,7 +5300,10 @@ function stringifyToken(token, index, arr) {
       if (token.action === AttributeAction.Exists) {
         return `[${name}]`;
       }
-      return `[${name}${getActionValue(token.action)}="${escapeName(token.value, charsToEscapeInAttributeValue)}"${token.ignoreCase === null ? "" : token.ignoreCase ? " i" : " s"}]`;
+      return `[${name}${getActionValue(token.action)}="${escapeName(
+        token.value,
+        charsToEscapeInAttributeValue,
+      )}"${token.ignoreCase === null ? "" : token.ignoreCase ? " i" : " s"}]`;
     }
   }
 }
@@ -5319,7 +5328,10 @@ function getActionValue(action) {
   }
 }
 function getNamespacedName(token) {
-  return `${getNamespace(token.namespace)}${escapeName(token.name, charsToEscapeInName)}`;
+  return `${getNamespace(token.namespace)}${escapeName(
+    token.name,
+    charsToEscapeInName,
+  )}`;
 }
 function getNamespace(namespace) {
   return namespace !== null
@@ -18717,7 +18729,11 @@ function serializeNode(node, options) {
 }
 function serializeElement(node, options) {
   const tn = options.treeAdapter.getTagName(node);
-  return `<${tn}${serializeAttributes(node, options)}>${isVoidElement(node, options) ? "" : `${serializeChildNodes(node, options)}</${tn}>`}`;
+  return `<${tn}${serializeAttributes(node, options)}>${
+    isVoidElement(node, options)
+      ? ""
+      : `${serializeChildNodes(node, options)}</${tn}>`
+  }`;
 }
 function serializeAttributes(node, { treeAdapter }) {
   let html = "";
@@ -32222,7 +32238,9 @@ function createParser$1(config) {
             .slice(0, -6)
             .replace(/-/g, " ")
             .replace(/^./, (m) => m.toUpperCase());
-          let message = `${/[[\](){}]/.test(tokenName) ? `"${tokenName}"` : tokenName} is expected`;
+          let message = `${
+            /[[\](){}]/.test(tokenName) ? `"${tokenName}"` : tokenName
+          } is expected`;
           let offset = this.tokenStart;
 
           // tweak message and offset
@@ -55938,7 +55956,9 @@ function createParser(config) {
             .slice(0, -6)
             .replace(/-/g, " ")
             .replace(/^./, (m) => m.toUpperCase());
-          let message = `${/[[\](){}]/.test(tokenName) ? `"${tokenName}"` : tokenName} is expected`;
+          let message = `${
+            /[[\](){}]/.test(tokenName) ? `"${tokenName}"` : tokenName
+          } is expected`;
           let offset = this.tokenStart;
 
           // tweak message and offset
@@ -98383,7 +98403,11 @@ const $$Icon = createComponent(
 ${e}`);
       }
     }
-    return renderTemplate`${maybeRenderHead()}<svg${spreadAttributes(props)}${addAttribute(name, "astro-icon")}>${unescapeHTML((title ? `<title>${title}</title>` : "") + innerHTML)}</svg>`;
+    return renderTemplate`${maybeRenderHead()}<svg${spreadAttributes(
+      props,
+    )}${addAttribute(name, "astro-icon")}>${unescapeHTML(
+      (title ? `<title>${title}</title>` : "") + innerHTML,
+    )}</svg>`;
   },
   "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/node_modules/.pnpm/astro-iconify@1.2.0/node_modules/astro-iconify/lib/Icon.astro",
   void 0,
@@ -98432,7 +98456,21 @@ ${e}`);
           });
       }),
     );
-    return renderTemplate`${maybeRenderHead()}<svg${addAttribute(`position: absolute; width: 0; height: 0; overflow: hidden; ${style ?? ""}`.trim(), "style")}${spreadAttributes({ "aria-hidden": true, ...props })} astro-icon-spritesheet> ${icons.map((icon) => renderTemplate`<symbol${spreadAttributes(icon.props)}${addAttribute(`${SPRITESHEET_NAMESPACE}:${icon.name}`, "id")}>${unescapeHTML(icon.innerHTML)}</symbol>`)} </svg>`;
+    return renderTemplate`${maybeRenderHead()}<svg${addAttribute(
+      `position: absolute; width: 0; height: 0; overflow: hidden; ${
+        style ?? ""
+      }`.trim(),
+      "style",
+    )}${spreadAttributes({
+      "aria-hidden": true,
+      ...props,
+    })} astro-icon-spritesheet> ${icons.map(
+      (icon) =>
+        renderTemplate`<symbol${spreadAttributes(icon.props)}${addAttribute(
+          `${SPRITESHEET_NAMESPACE}:${icon.name}`,
+          "id",
+        )}>${unescapeHTML(icon.innerHTML)}</symbol>`,
+    )} </svg>`;
   },
   "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/node_modules/.pnpm/astro-iconify@1.2.0/node_modules/astro-iconify/lib/Spritesheet.astro",
   void 0,
@@ -98444,7 +98482,13 @@ const $$SpriteProvider = createComponent(
     const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
     Astro2.self = $$SpriteProvider;
     const content = await Astro2.slots.render("default");
-    return renderTemplate`${renderComponent($$result, "Fragment", Fragment, {}, { default: ($$result2) => renderTemplate`${unescapeHTML(content)}` })}${renderComponent($$result, "Spritesheet", $$Spritesheet, {})}`;
+    return renderTemplate`${renderComponent(
+      $$result,
+      "Fragment",
+      Fragment,
+      {},
+      { default: ($$result2) => renderTemplate`${unescapeHTML(content)}` },
+    )}${renderComponent($$result, "Spritesheet", $$Spritesheet, {})}`;
   },
   "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/node_modules/.pnpm/astro-iconify@1.2.0/node_modules/astro-iconify/lib/SpriteProvider.astro",
   void 0,
@@ -98470,7 +98514,17 @@ const $$Sprite = createComponent(
     }
     const href = `#${SPRITESHEET_NAMESPACE}:${name}`;
     trackSprite(Astro2.request, name);
-    return renderTemplate`${maybeRenderHead()}<svg${spreadAttributes(props)}${addAttribute(className, "class")}${addAttribute(name, "astro-icon")}> ${title ? renderTemplate`<title>${title}</title>` : ""} <use${spreadAttributes({ "xlink:href": href, width: props.width, height: props.height, x, y })}></use> </svg>`;
+    return renderTemplate`${maybeRenderHead()}<svg${spreadAttributes(
+      props,
+    )}${addAttribute(className, "class")}${addAttribute(name, "astro-icon")}> ${
+      title ? renderTemplate`<title>${title}</title>` : ""
+    } <use${spreadAttributes({
+      "xlink:href": href,
+      width: props.width,
+      height: props.height,
+      x,
+      y,
+    })}></use> </svg>`;
   },
   "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/node_modules/.pnpm/astro-iconify@1.2.0/node_modules/astro-iconify/lib/Sprite.astro",
   void 0,
@@ -98508,7 +98562,11 @@ function _sfc_ssrRender$3(
   $options,
 ) {
   _push(
-    `<div${ssrRenderAttrs(_attrs)}><div class="flex justify-center"><div class="cursor-pointer">Sobre</div><div style="${ssrRenderStyle($setup.isModalOpened ? null : { display: "none" })}" class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50 backdrop-blur-sm"><div class="mx-4 max-w-2xl rounded-lg bg-white p-6 shadow-xl"><div class="flex items-center justify-end"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div class="mt-4"><p class="mb-4 px-4 text-justify indent-10 text-base font-semibold leading-loose"> Cantinho do blog foi criado utilizando a tecnologia VueJS 3 e TypeScript, com o intuito especialmente de catalogar e guardar as minhas d\xFAvidas com rela\xE7\xE3o \xE0 desenvolvimento de software, outro ponto importante \xE9 que tamb\xE9m serve para demonstrar e compartilhar de uma forma intuitiva me estimulando a pensar em formas de trazer o conte\xFAdo entend\xEDvel tanto para pessoas leigas como para profissionais sem deixar de lados os termos t\xE9cnicos. </p></div></div></div></div></div>`,
+    `<div${ssrRenderAttrs(
+      _attrs,
+    )}><div class="flex justify-center"><div class="cursor-pointer">Sobre</div><div style="${ssrRenderStyle(
+      $setup.isModalOpened ? null : { display: "none" },
+    )}" class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50 backdrop-blur-sm"><div class="mx-4 max-w-2xl rounded-lg bg-white p-6 shadow-xl"><div class="flex items-center justify-end"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div class="mt-4"><p class="mb-4 px-4 text-justify indent-10 text-base font-semibold leading-loose"> Cantinho do blog foi criado utilizando a tecnologia VueJS 3 e TypeScript, com o intuito especialmente de catalogar e guardar as minhas d\xFAvidas com rela\xE7\xE3o \xE0 desenvolvimento de software, outro ponto importante \xE9 que tamb\xE9m serve para demonstrar e compartilhar de uma forma intuitiva me estimulando a pensar em formas de trazer o conte\xFAdo entend\xEDvel tanto para pessoas leigas como para profissionais sem deixar de lados os termos t\xE9cnicos. </p></div></div></div></div></div>`,
   );
 }
 const _sfc_setup$3 = _sfc_main$3.setup;
@@ -98528,7 +98586,30 @@ const $$Header = createComponent(
   async ($$result, $$props, $$slots) => {
     const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
     Astro2.self = $$Header;
-    return renderTemplate`${maybeRenderHead()}<header class="mb-8 flex h-20 w-full items-center bg-[#a0db44] px-8"> <div class="mx-auto flex max-w-screen-xl sm:gap-32 lg:gap-96"> ${renderComponent($$result, "HeaderVue", HeaderVue, { title: "Cantinho do Bloguinho" }, { default: ($$result2) => renderTemplate` ${renderComponent($$result2, "Icon", $$Icon, { name: "flat-color-icons:collaboration", size: "50" })} ` })} <div class="flex items-center gap-7 text-lg font-semibold text-[#0a0094]"> <a href="/" target="_self"><span>Home</span></a> ${renderComponent($$result, "Modal", Modal, { "client:load": true, "client:component-hydration": "load", "client:component-path": "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/src/components/Modal/Modal.vue", "client:component-export": "default" })} </div> </div> </header>`;
+    return renderTemplate`${maybeRenderHead()}<header class="mb-8 flex h-20 w-full items-center bg-[#a0db44] px-8"> <div class="mx-auto flex max-w-screen-xl sm:gap-32 lg:gap-96"> ${renderComponent(
+      $$result,
+      "HeaderVue",
+      HeaderVue,
+      { title: "Cantinho do Bloguinho" },
+      {
+        default: ($$result2) =>
+          renderTemplate` ${renderComponent($$result2, "Icon", $$Icon, {
+            name: "flat-color-icons:collaboration",
+            size: "50",
+          })} `,
+      },
+    )} <div class="flex items-center gap-7 text-lg font-semibold text-[#0a0094]"> <a href="/" target="_self"><span>Home</span></a> ${renderComponent(
+      $$result,
+      "Modal",
+      Modal,
+      {
+        "client:load": true,
+        "client:component-hydration": "load",
+        "client:component-path":
+          "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/src/components/Modal/Modal.vue",
+        "client:component-export": "default",
+      },
+    )} </div> </div> </header>`;
   },
   "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/src/components/Header/Header.astro",
   void 0,
@@ -98540,7 +98621,15 @@ const $$Layout = createComponent(
     const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
     Astro2.self = $$Layout;
     const { title } = Astro2.props;
-    return renderTemplate`<html lang="pt-br" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(Astro2.generator, "content")}><title>${title}</title>${renderHead()}</head> <body class="font-roboto bg-slate-200" data-astro-cid-sckkx6r4> ${renderComponent($$result, "Header", $$Header, { "data-astro-cid-sckkx6r4": true })} ${renderSlot($$result, $$slots["default"])} </body></html>`;
+    return renderTemplate`<html lang="pt-br" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"${addAttribute(
+      Astro2.generator,
+      "content",
+    )}><title>${title}</title>${renderHead()}</head> <body class="font-roboto bg-slate-200" data-astro-cid-sckkx6r4> ${renderComponent(
+      $$result,
+      "Header",
+      $$Header,
+      { "data-astro-cid-sckkx6r4": true },
+    )} ${renderSlot($$result, $$slots["default"])} </body></html>`;
   },
   "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/src/layouts/Layout.astro",
   void 0,
@@ -98550,7 +98639,9 @@ const _sfc_main$2 = {};
 
 function _sfc_ssrRender$2(_ctx, _push, _parent, _attrs) {
   _push(
-    `<span${ssrRenderAttrs(mergeProps({ class: "marcaTexto" }, _attrs))} data-v-6b70153a>`,
+    `<span${ssrRenderAttrs(
+      mergeProps({ class: "marcaTexto" }, _attrs),
+    )} data-v-6b70153a>`,
   );
   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
   _push(`</span>`);
@@ -98572,7 +98663,9 @@ const _sfc_main$1 = {};
 
 function _sfc_ssrRender$1(_ctx, _push, _parent, _attrs) {
   _push(
-    `<span${ssrRenderAttrs(mergeProps({ class: "exemploTexto" }, _attrs))} data-v-280f9434>`,
+    `<span${ssrRenderAttrs(
+      mergeProps({ class: "exemploTexto" }, _attrs),
+    )} data-v-280f9434>`,
   );
   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
   _push(`</span>`);
@@ -98594,7 +98687,9 @@ const _sfc_main = {};
 
 function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
   _push(
-    `<code${ssrRenderAttrs(mergeProps({ class: "codigoTexto" }, _attrs))} data-v-971607be>`,
+    `<code${ssrRenderAttrs(
+      mergeProps({ class: "codigoTexto" }, _attrs),
+    )} data-v-971607be>`,
   );
   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
   _push(`</code>`);
@@ -98631,23 +98726,92 @@ const $$ = createComponent(
           $$result2,
         ) => renderTemplate` ${maybeRenderHead()}<div class="container mx-auto max-w-screen-lg rounded-lg bg-white p-8"> <header class="flex flex-col gap-10 pb-10"> <h2 class="text-sm font-medium text-[#4141b1]">
 Publicado em ${formateDate()} </h2> <h1 class="font-title text-center text-3xl font-semibold">${titleNews}</h1> </header> <section class="flex flex-col gap-4 hyphens-auto break-words leading-loose"> <p>
-Esse é um tutorial que funciona no ${renderComponent($$result2, "MarkText", MarkText, {}, { default: ($$result3) => renderTemplate`VueJS (v3.3.8)` })} em
-        conjunto com o ${renderComponent($$result2, "MarkText", MarkText, {}, { default: ($$result3) => renderTemplate`Vite mais recente (v4.5.0)` })} </p> <p>
+Esse é um tutorial que funciona no ${renderComponent(
+          $$result2,
+          "MarkText",
+          MarkText,
+          {},
+          { default: ($$result3) => renderTemplate`VueJS (v3.3.8)` },
+        )} em
+        conjunto com o ${renderComponent(
+          $$result2,
+          "MarkText",
+          MarkText,
+          {},
+          {
+            default: ($$result3) => renderTemplate`Vite mais recente (v4.5.0)`,
+          },
+        )} </p> <p>
 É sempre importante lembrar que você pode configurar corretamente o seu
         projeto para que facilite certos tipos de ação aumentando a sua
         produtividade, e um desses tipos de configuração é como podemos melhorar
-        métodos de ${renderComponent($$result2, "MarkText", MarkText, {}, { default: ($$result3) => renderTemplate`chamar pastas / arquivos / imagens` })} dentro
+        métodos de ${renderComponent(
+          $$result2,
+          "MarkText",
+          MarkText,
+          {},
+          {
+            default: ($$result3) =>
+              renderTemplate`chamar pastas / arquivos / imagens`,
+          },
+        )} dentro
         de um projeto de forma eficiente e sem se preocupar muito com os subdiretórios,
-        tudo isso através do ${renderComponent($$result2, "MarkText", MarkText, {}, { default: ($$result3) => renderTemplate`path alias (@)` })} </p> <p>
+        tudo isso através do ${renderComponent(
+          $$result2,
+          "MarkText",
+          MarkText,
+          {},
+          { default: ($$result3) => renderTemplate`path alias (@)` },
+        )} </p> <p>
 Geralmente chamamos as pastas por caminhos através de pontinhos e barras
-${renderComponent($$result2, "MarkText", MarkText, {}, { default: ($$result3) => renderTemplate`(navegação por pastas)` })}, por exemplo
+${renderComponent(
+  $$result2,
+  "MarkText",
+  MarkText,
+  {},
+  { default: ($$result3) => renderTemplate`(navegação por pastas)` },
+)}, por exemplo
 ${renderComponent($$result2, "Code01", Content, {})}
 (lembrando o sistema de pesquisa do terminal Linux ou do Windows) mas se
         preferir, poderá substituir os pontos pelo prefixo @ "arroba" por
         exemplo
-${renderComponent($$result2, "Code02", Content$1, {})} </p> <p> ${renderComponent($$result2, "ExampleText", ExampleText, {}, { default: ($$result3) => renderTemplate`Exemplo de código com a navegação por pastas:` })} ${renderComponent($$result2, "Code03", Content$2, {})} </p> <p> ${renderComponent($$result2, "ExampleText", ExampleText, {}, { default: ($$result3) => renderTemplate`Exemplo de código utilizando o path alias @:` })} ${renderComponent($$result2, "Code04", Content$3, {})} </p> <p>
+${renderComponent(
+  $$result2,
+  "Code02",
+  Content$1,
+  {},
+)} </p> <p> ${renderComponent(
+          $$result2,
+          "ExampleText",
+          ExampleText,
+          {},
+          {
+            default: ($$result3) =>
+              renderTemplate`Exemplo de código com a navegação por pastas:`,
+          },
+        )} ${renderComponent(
+          $$result2,
+          "Code03",
+          Content$2,
+          {},
+        )} </p> <p> ${renderComponent(
+          $$result2,
+          "ExampleText",
+          ExampleText,
+          {},
+          {
+            default: ($$result3) =>
+              renderTemplate`Exemplo de código utilizando o path alias @:`,
+          },
+        )} ${renderComponent($$result2, "Code04", Content$3, {})} </p> <p>
 Geralmente após o processo de instalação de um novo projeto VueJS esse
-        tipo de ${renderComponent($$result2, "MarkText", MarkText, {}, { default: ($$result3) => renderTemplate`atalho` })} já é adicionado e configurado automaticamente
+        tipo de ${renderComponent(
+          $$result2,
+          "MarkText",
+          MarkText,
+          {},
+          { default: ($$result3) => renderTemplate`atalho` },
+        )} já é adicionado e configurado automaticamente
         em seu projeto, mas em caso de dúvidas, acesse o arquivo ${renderComponent(
           $$result2,
           "CodeText",
@@ -98659,11 +98823,29 @@ vite.config.ts
 `,
           },
         )} ou
-${renderComponent($$result2, "CodeText", CodeText, {}, { default: ($$result3) => renderTemplate`vite.config.js` })} e verifique se irá aparecer semelhante
+${renderComponent(
+  $$result2,
+  "CodeText",
+  CodeText,
+  {},
+  { default: ($$result3) => renderTemplate`vite.config.js` },
+)} e verifique se irá aparecer semelhante
         a esse código abaixo:
 </p> ${renderComponent($$result2, "Code05", Content$4, {})} <p>
-O ${renderComponent($$result2, "MarkText", MarkText, {}, { default: ($$result3) => renderTemplate`atalho @` })} é configurado para apontar para o diretório
-${renderComponent($$result2, "MarkText", MarkText, {}, { default: ($$result3) => renderTemplate`src` })} do seu projeto. Isso é feito usando a função ${renderComponent(
+O ${renderComponent(
+          $$result2,
+          "MarkText",
+          MarkText,
+          {},
+          { default: ($$result3) => renderTemplate`atalho @` },
+        )} é configurado para apontar para o diretório
+${renderComponent(
+  $$result2,
+  "MarkText",
+  MarkText,
+  {},
+  { default: ($$result3) => renderTemplate`src` },
+)} do seu projeto. Isso é feito usando a função ${renderComponent(
           $$result2,
           "CodeText",
           CodeText,
@@ -98674,8 +98856,20 @@ fileURLToPath
 `,
           },
         )} e
-${renderComponent($$result2, "CodeText", CodeText, {}, { default: ($$result3) => renderTemplate`new URL` })} do
-${renderComponent($$result2, "MarkText", MarkText, {}, { default: ($$result3) => renderTemplate`Node.js` })}
+${renderComponent(
+  $$result2,
+  "CodeText",
+  CodeText,
+  {},
+  { default: ($$result3) => renderTemplate`new URL` },
+)} do
+${renderComponent(
+  $$result2,
+  "MarkText",
+  MarkText,
+  {},
+  { default: ($$result3) => renderTemplate`Node.js` },
+)}
 para criar um caminho absoluto para o diretório ${renderComponent(
           $$result2,
           "MarkText",
@@ -98687,7 +98881,13 @@ src
 `,
           },
         )}, ou seja, você poderá indicar em qualquer pasta que esteja
-        dentro da ${renderComponent($$result2, "MarkText", MarkText, {}, { default: ($$result3) => renderTemplate`pasta-mãe src` })} </p> </section> </div> `,
+        dentro da ${renderComponent(
+          $$result2,
+          "MarkText",
+          MarkText,
+          {},
+          { default: ($$result3) => renderTemplate`pasta-mãe src` },
+        )} </p> </section> </div> `,
       },
     )}`;
   },

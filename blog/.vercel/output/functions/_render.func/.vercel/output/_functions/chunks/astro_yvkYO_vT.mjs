@@ -71,7 +71,9 @@ const OnlyResponseCanBeReturned = {
   name: "OnlyResponseCanBeReturned",
   title: "Invalid type returned by Astro page.",
   message: (route, returnedValue) =>
-    `Route \`${route ? route : ""}\` returned a \`${returnedValue}\`. Only a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) can be returned from Astro files.`,
+    `Route \`${
+      route ? route : ""
+    }\` returned a \`${returnedValue}\`. Only a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) can be returned from Astro files.`,
   hint: "See https://docs.astro.build/en/guides/server-side-rendering/#response for more information.",
 };
 const MissingMediaQueryDirective = {
@@ -92,9 +94,17 @@ const NoMatchingRenderer = {
 
 ${
   validRenderersCount > 0
-    ? `There ${plural ? "are" : "is"} ${validRenderersCount} renderer${plural ? "s" : ""} configured in your \`astro.config.mjs\` file,
-but ${plural ? "none were" : "it was not"} able to server-side render \`${componentName}\`.`
-    : `No valid renderer was found ${componentExtension ? `for the \`.${componentExtension}\` file extension.` : `for this file extension.`}`
+    ? `There ${plural ? "are" : "is"} ${validRenderersCount} renderer${
+        plural ? "s" : ""
+      } configured in your \`astro.config.mjs\` file,
+but ${
+        plural ? "none were" : "it was not"
+      } able to server-side render \`${componentName}\`.`
+    : `No valid renderer was found ${
+        componentExtension
+          ? `for the \`.${componentExtension}\` file extension.`
+          : `for this file extension.`
+      }`
 }`,
   hint: (
     probableRenderers,
@@ -199,7 +209,11 @@ const MissingImageDimension = {
   name: "MissingImageDimension",
   title: "Missing image dimensions",
   message: (missingDimension, imageURL) =>
-    `Missing ${missingDimension === "both" ? "width and height attributes" : `${missingDimension} attribute`} for ${imageURL}. When using remote images, both dimensions are required unless in order to avoid CLS.`,
+    `Missing ${
+      missingDimension === "both"
+        ? "width and height attributes"
+        : `${missingDimension} attribute`
+    } for ${imageURL}. When using remote images, both dimensions are required unless in order to avoid CLS.`,
   hint: "If your image is inside your `src` folder, you probably meant to import it instead. See [the Imports guide for more information](https://docs.astro.build/en/guides/imports/#other-assets). You can also use `inferSize={true}` for remote images to get the original dimensions.",
 };
 const FailedToFetchRemoteImageDimensions = {
@@ -229,7 +243,10 @@ const PrerenderDynamicEndpointPathCollide = {
   message: (pathname) =>
     `Could not render \`${pathname}\` with an \`undefined\` param as the generated path will collide during prerendering. Prevent passing \`undefined\` as \`params\` for the endpoint's \`getStaticPaths()\` function, or add an additional extension to the endpoint's filename.`,
   hint: (filename) =>
-    `Rename \`${filename}\` to \`${filename.replace(/\.(?:js|ts)/, (m) => `.json` + m)}\``,
+    `Rename \`${filename}\` to \`${filename.replace(
+      /\.(?:js|ts)/,
+      (m) => `.json` + m,
+    )}\``,
 };
 const ExpectedImage = {
   name: "ExpectedImage",
@@ -337,11 +354,11 @@ function codeFrame(src, loc) {
     output += `${lineNo + 1} | ${lines[lineNo]}
 `;
     if (isFocusedLine)
-      output += `${Array.from({ length: gutterWidth }).join(" ")}  | ${Array.from(
-        {
-          length: loc.column,
-        },
-      ).join(" ")}^
+      output += `${Array.from({ length: gutterWidth }).join(
+        " ",
+      )}  | ${Array.from({
+        length: loc.column,
+      }).join(" ")}^
 `;
   }
   return output;
@@ -445,7 +462,9 @@ async function renderEndpoint(mod, context, ssr, logger) {
   if (handler === void 0) {
     logger.warn(
       "router",
-      `No API Route handler exists for the method "${method}" for the route "${url.pathname}".
+      `No API Route handler exists for the method "${method}" for the route "${
+        url.pathname
+      }".
 Found handlers: ${Object.keys(mod)
         .map((exp) => JSON.stringify(exp))
         .join(", ")}
@@ -460,7 +479,9 @@ Found handlers: ${Object.keys(mod)
   if (typeof handler !== "function") {
     logger.error(
       "router",
-      `The route "${url.pathname}" exports a value for the method "${method}", but it is of the type ${typeof handler} instead of a function.`,
+      `The route "${
+        url.pathname
+      }" exports a value for the method "${method}", but it is of the type ${typeof handler} instead of a function.`,
     );
     return new Response(null, { status: 500 });
   }
@@ -1040,7 +1061,14 @@ function getDirectiveScriptText(result, directive) {
 function getPrescripts(result, type, directive) {
   switch (type) {
     case "both":
-      return `${ISLAND_STYLES}<script>${getDirectiveScriptText(result, directive)};${process.env.NODE_ENV === "development" ? astro_island_prebuilt_dev_default : astro_island_prebuilt_default}</script>`;
+      return `${ISLAND_STYLES}<script>${getDirectiveScriptText(
+        result,
+        directive,
+      )};${
+        process.env.NODE_ENV === "development"
+          ? astro_island_prebuilt_dev_default
+          : astro_island_prebuilt_default
+      }</script>`;
     case "directive":
       return `<script>${getDirectiveScriptText(result, directive)}</script>`;
   }
@@ -1121,7 +1149,10 @@ Make sure to use the static attribute syntax (\`${key}={value}\`) instead of the
   if (key === "style" && !(value instanceof HTMLString)) {
     if (Array.isArray(value) && value.length === 2) {
       return markHTMLString(
-        ` ${key}="${toAttributeString(`${toStyleString(value[0])};${value[1]}`, shouldEscape)}"`,
+        ` ${key}="${toAttributeString(
+          `${toStyleString(value[0])};${value[1]}`,
+          shouldEscape,
+        )}"`,
       );
     }
     if (typeof value === "object") {
@@ -1175,7 +1206,10 @@ function renderElement$1(
   if ((children == null || children == "") && voidElementNames.test(name)) {
     return `<${name}${internalSpreadAttributes(props, shouldEscape)} />`;
   }
-  return `<${name}${internalSpreadAttributes(props, shouldEscape)}>${children}</${name}>`;
+  return `<${name}${internalSpreadAttributes(
+    props,
+    shouldEscape,
+  )}>${children}</${name}>`;
 }
 function renderToBufferDestination(bufferRenderFunction) {
   const bufferChunks = [];
@@ -1817,7 +1851,10 @@ async function renderHTMLElement(result, constructor, props, slots) {
     attrHTML += ` ${attr}="${toAttributeString(await props[attr])}"`;
   }
   return markHTMLString(
-    `<${name}${attrHTML}>${await renderSlotToString(result, slots?.default)}</${name}>`,
+    `<${name}${attrHTML}>${await renderSlotToString(
+      result,
+      slots?.default,
+    )}</${name}>`,
   );
 }
 function getHTMLElementName(constructor) {
@@ -2123,7 +2160,9 @@ ${serializeProps(props, metadata)}`,
       ? unrenderedSlots
           .map(
             (key) =>
-              `<template data-astro-template${key !== "default" ? `="${key}"` : ""}>${children[key]}</template>`,
+              `<template data-astro-template${
+                key !== "default" ? `="${key}"` : ""
+              }>${children[key]}</template>`,
           )
           .join("")
       : "";
@@ -2490,7 +2529,11 @@ async function renderElement(result, tag, { children, ...props }) {
     `<${tag}${spreadAttributes(props)}${markHTMLString(
       (children == null || children == "") && voidElementNames.test(tag)
         ? `/>`
-        : `>${children == null ? "" : await renderJSX(result, prerenderElementChildren(tag, children))}</${tag}>`,
+        : `>${
+            children == null
+              ? ""
+              : await renderJSX(result, prerenderElementChildren(tag, children))
+          }</${tag}>`,
     )}`,
   );
 }

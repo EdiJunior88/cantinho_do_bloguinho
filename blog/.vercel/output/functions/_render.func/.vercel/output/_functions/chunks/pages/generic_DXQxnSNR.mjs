@@ -1470,7 +1470,12 @@ const $$Image = createComponent(
     if (image.srcSet.values.length > 0) {
       additionalAttributes.srcset = image.srcSet.attribute;
     }
-    return renderTemplate`${maybeRenderHead()}<img${addAttribute(image.src, "src")}${spreadAttributes(additionalAttributes)}${spreadAttributes(image.attributes)}>`;
+    return renderTemplate`${maybeRenderHead()}<img${addAttribute(
+      image.src,
+      "src",
+    )}${spreadAttributes(additionalAttributes)}${spreadAttributes(
+      image.attributes,
+    )}>`;
   },
   "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/node_modules/.pnpm/astro@4.4.5_typescript@5.3.3/node_modules/astro/components/Image.astro",
   void 0,
@@ -1526,15 +1531,27 @@ const $$Picture = createComponent(
     if (fallbackImage.srcSet.values.length > 0) {
       imgAdditionalAttributes.srcset = fallbackImage.srcSet.attribute;
     }
-    return renderTemplate`${maybeRenderHead()}<picture${spreadAttributes(pictureAttributes)}> ${Object.entries(
-      optimizedImages,
-    ).map(([_, image]) => {
+    return renderTemplate`${maybeRenderHead()}<picture${spreadAttributes(
+      pictureAttributes,
+    )}> ${Object.entries(optimizedImages).map(([_, image]) => {
       const srcsetAttribute =
         props.densities || (!props.densities && !props.widths)
-          ? `${image.src}${image.srcSet.values.length > 0 ? ", " + image.srcSet.attribute : ""}`
+          ? `${image.src}${
+              image.srcSet.values.length > 0
+                ? ", " + image.srcSet.attribute
+                : ""
+            }`
           : image.srcSet.attribute;
-      return renderTemplate`<source${addAttribute(srcsetAttribute, "srcset")}${addAttribute("image/" + image.options.format, "type")}${spreadAttributes(sourceAdditionalAttributes)}>`;
-    })} <img${addAttribute(fallbackImage.src, "src")}${spreadAttributes(imgAdditionalAttributes)}${spreadAttributes(fallbackImage.attributes)}> </picture>`;
+      return renderTemplate`<source${addAttribute(
+        srcsetAttribute,
+        "srcset",
+      )}${addAttribute(
+        "image/" + image.options.format,
+        "type",
+      )}${spreadAttributes(sourceAdditionalAttributes)}>`;
+    })} <img${addAttribute(fallbackImage.src, "src")}${spreadAttributes(
+      imgAdditionalAttributes,
+    )}${spreadAttributes(fallbackImage.attributes)}> </picture>`;
   },
   "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/node_modules/.pnpm/astro@4.4.5_typescript@5.3.3/node_modules/astro/components/Picture.astro",
   void 0,
