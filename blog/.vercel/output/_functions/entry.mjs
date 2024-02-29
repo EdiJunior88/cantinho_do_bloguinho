@@ -2256,7 +2256,9 @@ class App {
     request,
     { status, response: originalResponse, skipMiddleware = false },
   ) {
-    const errorRoutePath = `/${status}${this.#manifest.trailingSlash === "always" ? "/" : ""}`;
+    const errorRoutePath = `/${status}${
+      this.#manifest.trailingSlash === "always" ? "/" : ""
+    }`;
     const errorRouteData = matchRoute(errorRoutePath, this.#manifestData);
     const url = new URL(request.url);
     if (errorRouteData) {
@@ -5127,7 +5129,9 @@ const parse$1 = (input, options) => {
   } = PLATFORM_CHARS;
 
   const globstar = (opts) => {
-    return `(${capture}(?:(?!${START_ANCHOR}${opts.dot ? DOTS_SLASH : DOT_LITERAL}).)*?)`;
+    return `(${capture}(?:(?!${START_ANCHOR}${
+      opts.dot ? DOTS_SLASH : DOT_LITERAL
+    }).)*?)`;
   };
 
   const nodot = opts.dot ? "" : NO_DOT;
@@ -5982,7 +5986,9 @@ const parse$1 = (input, options) => {
         prior.output = `(?:${prior.output}`;
 
         prev.type = "globstar";
-        prev.output = `${globstar(opts)}${SLASH_LITERAL}|${SLASH_LITERAL}${end})`;
+        prev.output = `${globstar(
+          opts,
+        )}${SLASH_LITERAL}|${SLASH_LITERAL}${end})`;
         prev.value += value;
 
         state.output += prior.output + prev.output;
@@ -5997,7 +6003,9 @@ const parse$1 = (input, options) => {
       if (prior.type === "bos" && rest[0] === "/") {
         prev.type = "globstar";
         prev.value += value;
-        prev.output = `(?:^|${SLASH_LITERAL}|${globstar(opts)}${SLASH_LITERAL})`;
+        prev.output = `(?:^|${SLASH_LITERAL}|${globstar(
+          opts,
+        )}${SLASH_LITERAL})`;
         state.output = prev.output;
         state.globstar = true;
         consume(value + advance());
@@ -6157,7 +6165,9 @@ parse$1.fastpaths = (input, options) => {
 
   const globstar = (opts) => {
     if (opts.noglobstar === true) return star;
-    return `(${capture}(?:(?!${START_ANCHOR}${opts.dot ? DOTS_SLASH : DOT_LITERAL}).)*?)`;
+    return `(${capture}(?:(?!${START_ANCHOR}${
+      opts.dot ? DOTS_SLASH : DOT_LITERAL
+    }).)*?)`;
   };
 
   const create = (str) => {
@@ -6178,13 +6188,19 @@ parse$1.fastpaths = (input, options) => {
         return nodot + globstar(opts);
 
       case "**/*":
-        return `(?:${nodot}${globstar(opts)}${SLASH_LITERAL})?${slashDot}${ONE_CHAR}${star}`;
+        return `(?:${nodot}${globstar(
+          opts,
+        )}${SLASH_LITERAL})?${slashDot}${ONE_CHAR}${star}`;
 
       case "**/*.*":
-        return `(?:${nodot}${globstar(opts)}${SLASH_LITERAL})?${slashDot}${star}${DOT_LITERAL}${ONE_CHAR}${star}`;
+        return `(?:${nodot}${globstar(
+          opts,
+        )}${SLASH_LITERAL})?${slashDot}${star}${DOT_LITERAL}${ONE_CHAR}${star}`;
 
       case "**/.*":
-        return `(?:${nodot}${globstar(opts)}${SLASH_LITERAL})?${DOT_LITERAL}${ONE_CHAR}${star}`;
+        return `(?:${nodot}${globstar(
+          opts,
+        )}${SLASH_LITERAL})?${DOT_LITERAL}${ONE_CHAR}${star}`;
 
       default: {
         const match = /^(.*?)\.(\w+)$/.exec(str);

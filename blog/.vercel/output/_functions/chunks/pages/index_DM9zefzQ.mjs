@@ -57,11 +57,17 @@ function _sfc_ssrRender(
   $options,
 ) {
   _push(
-    `<div${ssrRenderAttrs(mergeProps({ class: "fontTitle mb-1 max-w-3xl" }, _attrs))}><div class="border-card relative -z-10 -mb-1 w-24 rounded-t-lg border bg-white px-2.5 py-2 text-center text-xs font-medium text-slate-500">${ssrInterpolate($props.datePost)}</div><div class="border-card flex h-20 items-stretch justify-normal rounded-lg border shadow-md"><div class="flex w-[105px] items-center justify-center rounded-l-lg bg-blue-200 p-4 text-black">`,
+    `<div${ssrRenderAttrs(
+      mergeProps({ class: "fontTitle mb-1 max-w-3xl" }, _attrs),
+    )}><div class="border-card relative -z-10 -mb-1 w-24 rounded-t-lg border bg-white px-2.5 py-2 text-center text-xs font-medium text-slate-500">${ssrInterpolate(
+      $props.datePost,
+    )}</div><div class="border-card flex h-20 items-stretch justify-normal rounded-lg border shadow-md"><div class="flex w-[105px] items-center justify-center rounded-l-lg bg-blue-200 p-4 text-black">`,
   );
   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
   _push(
-    `</div><div class="flex w-full items-center hyphens-auto break-words rounded-r-lg bg-white p-3 text-xl font-medium">${ssrInterpolate($props.title)}</div></div></div>`,
+    `</div><div class="flex w-full items-center hyphens-auto break-words rounded-r-lg bg-white p-3 text-xl font-medium">${ssrInterpolate(
+      $props.title,
+    )}</div></div></div>`,
   );
 }
 const _sfc_setup = _sfc_main.setup;
@@ -81,7 +87,21 @@ const $$Cards = createComponent(
   async ($$result, $$props, $$slots) => {
     const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
     Astro2.self = $$Cards;
-    return renderTemplate`${maybeRenderHead()}<section class="flex justify-center pb-8"> <a${addAttribute(`${fullDate}/${formateTitle}`, "href")}> ${renderComponent($$result, "CardsVue", CardsVue, { title: titleNews, datePost: formateDate() }, { default: ($$result2) => renderTemplate` ${renderComponent($$result2, "Icon", $$Icon, { name: "logos:vue" })} ` })} </a> </section>`;
+    return renderTemplate`${maybeRenderHead()}<section class="flex justify-center pb-8"> <a${addAttribute(
+      `${fullDate}/${formateTitle}`,
+      "href",
+    )}> ${renderComponent(
+      $$result,
+      "CardsVue",
+      CardsVue,
+      { title: titleNews, datePost: formateDate() },
+      {
+        default: ($$result2) =>
+          renderTemplate` ${renderComponent($$result2, "Icon", $$Icon, {
+            name: "logos:vue",
+          })} `,
+      },
+    )} </a> </section>`;
   },
   "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/src/components/Cards/Cards.astro",
   void 0,
@@ -92,7 +112,16 @@ const $$Index = createComponent(
   async ($$result, $$props, $$slots) => {
     const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
     Astro2.self = $$Index;
-    return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { title: "Cantinho do Bloguinho" }, { default: ($$result2) => renderTemplate` ${renderComponent($$result2, "Cards", $$Cards, {})} ` })}`;
+    return renderTemplate`${renderComponent(
+      $$result,
+      "Layout",
+      $$Layout,
+      { title: "Cantinho do Bloguinho" },
+      {
+        default: ($$result2) =>
+          renderTemplate` ${renderComponent($$result2, "Cards", $$Cards, {})} `,
+      },
+    )}`;
   },
   "C:/Users/ermou/Desktop/PROGRAMACAO/cantinho_do_bloguinho/blog/src/pages/index.astro",
   void 0,
