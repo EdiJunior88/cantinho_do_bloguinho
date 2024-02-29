@@ -32,13 +32,16 @@ Full tech stack [here](/techstack.md)
 <div align="center">
 
 # Tech Stack File
+
 ![](https://img.stackshare.io/repo.svg "repo") [EdiJunior88/cantinho_do_bloguinho](https://github.com/EdiJunior88/cantinho_do_bloguinho)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
 |12<br/>Tools used|02/29/24 <br/>Report generated|
 |------|------|
+
 </div>
 
 ## <img src='https://img.stackshare.io/languages.svg'/> Languages (3)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/1612/bynNY5dJ.jpg' alt='TypeScript'>
@@ -68,6 +71,7 @@ Full tech stack [here](/techstack.md)
 </table>
 
 ## <img src='https://img.stackshare.io/frameworks.svg'/> Frameworks (3)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/2202/72d087642cfce6fef6f2dabec5bf49e8_400x400.png' alt='Autoprefixer'>
@@ -97,6 +101,7 @@ Full tech stack [here](/techstack.md)
 </table>
 
 ## <img src='https://img.stackshare.io/devops.svg'/> DevOps (3)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/1046/git.png' alt='Git'>
@@ -125,16 +130,15 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-
 ## <img src='https://img.stackshare.io/group.svg' /> Open source packages (3)</h2>
 
 ## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (3)
 
-|NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
-|:------|:------|:------|:------|:------|:------|
-|[postcss-nesting](https://www.npmjs.com/postcss-nesting)|v12.0.4|02/29/24|EdiJunior88 |CC0-1.0|N/A|
-|[tailwindcss](https://www.npmjs.com/tailwindcss)|v3.4.1|02/29/24|EdiJunior88 |MIT|N/A|
-|[vue](https://www.npmjs.com/vue)|v3.4.21|02/27/24|EdiJunior88 |MIT|N/A|
+| NAME                                                     | VERSION | LAST UPDATED | LAST UPDATED BY | LICENSE | VULNERABILITIES |
+| :------------------------------------------------------- | :------ | :----------- | :-------------- | :------ | :-------------- |
+| [postcss-nesting](https://www.npmjs.com/postcss-nesting) | v12.0.4 | 02/29/24     | EdiJunior88     | CC0-1.0 | N/A             |
+| [tailwindcss](https://www.npmjs.com/tailwindcss)         | v3.4.1  | 02/29/24     | EdiJunior88     | MIT     | N/A             |
+| [vue](https://www.npmjs.com/vue)                         | v3.4.21 | 02/27/24     | EdiJunior88     | MIT     | N/A             |
 
 <br/>
 <div align='center'>
