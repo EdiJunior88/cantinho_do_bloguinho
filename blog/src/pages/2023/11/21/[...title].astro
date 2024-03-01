@@ -1,0 +1,198 @@
+---
+/* Layout - Astro */
+import Layout from "@/layouts/Layout.astro";
+
+/* Title - TypeScript */
+import {
+  titleNews_02,
+  formateTitle_02,
+  formateDate_02,
+} from "@/pages/2023/11/21/title";
+
+/* CSS Global - TailWindCSS */
+import "@/css/style.css";
+
+/* Components - Vue */
+import MarkText from "@/components/Text/MarkText.vue";
+import ExampleText from "@/components/Text/ExampleText.vue";
+import CodeText from "@/components/Text/CodeText.vue";
+
+/* Codes - Markdown */
+import Code01 from "./Codes/code01.md";
+import Code02 from "./Codes/code02.md";
+
+export function getStaticPaths() {
+  formateTitle_02;
+  return [{ params: { title: formateTitle_02 } }];
+}
+---
+
+<Layout title={titleNews_02}>
+  <div class="container mx-auto max-w-screen-lg rounded-lg bg-white p-8">
+    <header class="flex flex-col gap-10 pb-10">
+      <h2 class="text-sm font-medium text-[#4141b1]">
+        Publicado em {formateDate_02()}
+      </h2>
+      <h1 class="font-title text-center text-3xl font-semibold">
+        {titleNews_02}
+      </h1>
+    </header>
+
+    <section class="flex flex-col gap-4 hyphens-auto break-words leading-loose">
+      <p>
+        Esse é um tutorial que funciona no <MarkText>NextJS (v14.0.3)</MarkText>
+        e também na versão mais recente do <MarkText>
+          Styled-Components (v6.1.1)
+        </MarkText>
+      </p>
+
+      <p>
+        Um dos típicos erros que enfrentamos ao estilizar uma página no
+        framework NextJS é apresentar um "erro" (não necessariamente um erro e
+        sim uma aparente falta de estilização) ao abrir a página pela primeira
+        vez. Esse tipo de erro ocorre porque o NextJS possui uma arquitetura que
+        divide o seu código em um <MarkText>modo cliente</MarkText> e <MarkText>
+          modo servidor
+        </MarkText>.
+      </p>
+
+      <p>
+        - O <MarkText>modo servidor</MarkText> se refere ao navegador no dispositivo
+        do usuário que envia uma solicitação a um servidor para retornar algo (no
+        nosso caso uma página web).
+      </p>
+
+      <p>
+        - O <MarkText>modo cliente</MarkText> se refere a um computador em um data
+        center que armazena o código do seu aplicativo, como um site. Esse servidor
+        recebe solicitações de um cliente e envia de volta uma resposta.
+      </p>
+
+      <p>
+        Já que destrinchamos essa longa parte, vamos realmente ao que interessa.
+        Para resolver esse problema basta modificar o arquivo padrão do NextJS:
+        <CodeText>next.config.js</CodeText> ou <CodeText>
+          next.config.ts
+        </CodeText>. Agora verifique a <CodeText>linha 10 (compiler)</CodeText>
+      </p>
+
+      <Code01 />
+
+      <p>
+        O <CodeText>compiler: {}</CodeText> diz para o NextJS compilar o seu código
+        utilizando o <CodeText>StyledComponents: true</CodeText>. O arquivo <CodeText
+        >
+          next.config.js
+        </CodeText> ou <CodeText>next.config.ts</CodeText> é usado pelo servidor
+        NextJS, ou seja, é através desse arquivo que o seu código irá fazer a comunicação
+        com o servidor, então, ele irá carregar os <MarkText>
+          estilos CSS do Styled-Components
+        </MarkText>
+        renderizados no lado do servidor.
+      </p>
+
+      <p>
+        Mas porquê que eu tenho que fazer todo esse processo? Porque por padrão
+        o <MarkText>CSS</MarkText> é renderizado ao lado do cliente para evitar sobrecarregar
+        o servidor com muitas informações, mas, utilizamos o <MarkText>
+          framework NextJS
+        </MarkText> que pré-renderiza todas as páginas no lado servidor e por isso
+        que em um primeiro momentos a página carrega o conteúdo sem estilização.
+      </p>
+
+      <p>
+        No entanto, temos uma parte excelente em que o <MarkText>
+          Styled Components
+        </MarkText> tem a vantagem de rodar (renderizar) no lado do servidor de forma
+        simultânea com o cliente, renderizando somente o necessário (que nesse caso
+        você é quem irá configurar quais os elementos serão estilizados) e isso é
+        muito mais eficiente que o CSS normal.
+      </p>
+
+      <p>
+        Também temos que criar um arquivo raiz chamado de <CodeText>
+          registry.js
+        </CodeText> ou
+        <CodeText>registry.tsx</CodeText> da seguinte maneira:
+      </p>
+
+      <Code02 />
+
+      <p>
+        Este código é um módulo para registrar e gerenciar componentes
+        estilizados em uma aplicação React. Ele exporta uma função padrão
+        chamada <MarkText>StyledComponentsRegistry</MarkText> que recebe a propriedade
+        children como entrada.
+      </p>
+
+      <p>
+        <ul>
+          <ExampleText>O código importa várias dependências:</ExampleText>
+          <li>📌 <CodeText>React</CodeText> para criar componentes React</li>
+          <li>
+            📌 <CodeText>useState</CodeText> do React para gerenciar estado em componentes
+            funcionais
+          </li>
+          <li>
+            📌 <CodeText>useServerInsertedHTML</CodeText> de <MarkText>
+              next/navigation
+            </MarkText> para gerenciar HTML renderizado no servidor
+          </li>
+          <li>
+            📌 <CodeText>ServerStyleSheet</CodeText> de <MarkText>
+              styled-components
+            </MarkText> para criar uma folha de estilo no lado do servidor
+          </li>
+          <li>
+            📌 <CodeText>StyleSheetManager</CodeText> de <MarkText>
+              styled-components
+            </MarkText> para gerenciar as folhas de estilos
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        Dentro da função <MarkText>StyledComponentsRegistry</MarkText>, ele
+        inicializa uma variável de estado <MarkText>
+          styledComponentsStyleSheet
+        </MarkText> usando o gancho useState. O valor inicial é uma nova instância
+        de <MarkText>ServerStyleSheet</MarkText>.
+      </p>
+
+      <p>
+        O código então usa o gancho <MarkText>useServerInsertedHTML</MarkText> para
+        inserir o elemento de estilo no HTML renderizado no servidor. Ele recupera
+        o elemento de estilo da instância <MarkText>
+          styledComponentsStyleSheet
+        </MarkText> usando
+        <MarkText>getStyleElement()</MarkText>, limpa a tag de estilo usando <MarkText
+        >
+          clearTag()
+        </MarkText>, e retorna os estilos como um fragmento JSX.
+      </p>
+
+      <p>
+        Em seguida, o código verifica se o código está sendo executado no lado
+        do cliente, verificando se o objeto <MarkText>window</MarkText> está definido.
+        Se estiver, ele retorna a propriedade <MarkText>children</MarkText> sem nenhuma
+        modificação.
+      </p>
+
+      <p>
+        Se o código estiver sendo executado no lado do servidor, ele envolve a
+        propriedade <MarkText>children</MarkText> com um componente <MarkText>
+          StyleSheetManager
+        </MarkText> e passa
+        <MarkText>styledComponentsStyleSheet.instance</MarkText> como a propriedade
+        <MarkText>sheet</MarkText>.
+      </p>
+
+      <p>
+        No geral, este código configura um registro para gerenciar componentes
+        estilizados em uma aplicação React, garantindo que os estilos sejam
+        renderizados corretamente tanto no <MarkText>servidor</MarkText> quanto no
+        <MarkText>cliente</MarkText>
+      </p>
+    </section>
+  </div>
+</Layout>

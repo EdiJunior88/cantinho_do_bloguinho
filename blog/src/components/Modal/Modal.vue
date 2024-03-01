@@ -25,7 +25,7 @@ const closeModal = () => {
 
       <div
         v-show="isModalOpened"
-        class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50 backdrop-blur-sm"
+        class="fixed inset-0 z-10 flex max-h-screen items-center justify-center bg-gray-700 bg-opacity-50 backdrop-blur-sm"
       >
         <div class="mx-4 max-w-2xl rounded-lg bg-white p-6 shadow-xl">
           <div class="flex items-center justify-end">
@@ -49,13 +49,20 @@ const closeModal = () => {
             <p
               class="mb-4 px-4 text-justify indent-10 text-base font-semibold leading-loose"
             >
-              Cantinho do blog foi criado utilizando a tecnologia VueJS 3 e
-              TypeScript, com o intuito especialmente de catalogar e guardar as
-              minhas dúvidas com relação à desenvolvimento de software, outro
-              ponto importante é que também serve para demonstrar e compartilhar
-              de uma forma intuitiva me estimulando a pensar em formas de trazer
-              o conteúdo entendível tanto para pessoas leigas como para
-              profissionais sem deixar de lados os termos técnicos.
+              Cantinho do blog foi criado utilizando a tecnologia Astro, Vue 3,
+              TypeScript e TailWind CSS com o intuito especialmente de catalogar
+              e guardar as minhas dúvidas com relação à desenvolvimento de
+              software
+            </p>
+            <p
+              class="mb-4 px-4 text-justify indent-10 text-base font-semibold leading-loose"
+            >
+              Outro ponto importante desse projeto que é uma ferramenta para
+              compartilhar minhas ideias de uma forma intuitiva, me estimulando
+              a pensar em formas de trazer o conteúdo entendível tanto para
+              pessoas leigas como para profissionais sem deixar de lado os
+              termos técnicos ou referência a algum conteúdo original
+              (primário).
             </p>
           </div>
         </div>

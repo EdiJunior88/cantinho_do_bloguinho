@@ -1,11 +1,18 @@
 ---
 /* Title - TypeScript */
 import {
-  titleNews,
-  fullDate,
-  formateTitle,
-  formateDate,
+  titleNews_01,
+  fullDate_01,
+  formateTitle_01,
+  formateDate_01,
 } from "@/pages/2023/11/07/title";
+
+import {
+  titleNews_02,
+  fullDate_02,
+  formateTitle_02,
+  formateDate_02,
+} from "@/pages/2023/11/21/title";
 
 /* Componentes Cards - Vue */
 import CardsVue from "./Cards.vue";
@@ -14,10 +21,16 @@ import CardsVue from "./Cards.vue";
 import { Icon } from "astro-iconify";
 ---
 
-<section class="flex justify-center pb-8">
-  <a href={`${fullDate}/${formateTitle}`}>
-    <CardsVue title={titleNews} datePost={formateDate()}>
-      <Icon name="logos:vue" />
+<section class="flex flex-col items-center justify-center gap-2 pb-8">
+  <a href={`${fullDate_01}/${formateTitle_01}`}>
+    <CardsVue title={titleNews_01} datePost={formateDate_01()}>
+      <Icon name="logos:vue" size="55" />
+    </CardsVue>
+  </a>
+
+  <a href={`${fullDate_02}/${formateTitle_02}`}>
+    <CardsVue title={titleNews_02} datePost={formateDate_02()}>
+      <Icon name="logos:nextjs-icon" size="55" />
     </CardsVue>
   </a>
 </section>

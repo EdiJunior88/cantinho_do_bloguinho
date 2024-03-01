@@ -3,7 +3,11 @@
 import Layout from "@/layouts/Layout.astro";
 
 /* Title - TypeScript */
-import { titleNews, formateTitle, formateDate } from "@/pages/2023/11/07/title";
+import {
+  titleNews_01,
+  formateTitle_01,
+  formateDate_01,
+} from "@/pages/2023/11/07/title";
 
 /* CSS Global - TailWindCSS */
 import "@/css/style.css";
@@ -21,20 +25,20 @@ import Code04 from "./Codes/code04.md";
 import Code05 from "./Codes/code05.md";
 
 export function getStaticPaths() {
-  formateTitle;
-  return [{ params: { title: formateTitle } }];
+  formateTitle_01;
+  return [{ params: { title: formateTitle_01 } }];
 }
-
-const { title } = Astro.params;
 ---
 
-<Layout title={title}>
+<Layout title={titleNews_01}>
   <div class="container mx-auto max-w-screen-lg rounded-lg bg-white p-8">
     <header class="flex flex-col gap-10 pb-10">
       <h2 class="text-sm font-medium text-[#4141b1]">
-        Publicado em {formateDate()}
+        Publicado em {formateDate_01()}
       </h2>
-      <h1 class="font-title text-center text-3xl font-semibold">{titleNews}</h1>
+      <h1 class="font-title text-center text-3xl font-semibold">
+        {titleNews_01}
+      </h1>
     </header>
 
     <section class="flex flex-col gap-4 hyphens-auto break-words leading-loose">
