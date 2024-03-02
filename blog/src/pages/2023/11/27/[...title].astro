@@ -1,0 +1,205 @@
+---
+/* Layout - Astro */
+import Layout from "@/layouts/Layout.astro";
+
+import { Image } from "astro:assets";
+
+/* Title - TypeScript */
+import {
+  titleNews_04,
+  formateTitle_04,
+  formateDate_04,
+} from "@/pages/2023/11/27/title";
+
+/* CSS Global - TailWindCSS */
+import "@/css/style.css";
+
+/* Components - Vue */
+import MarkText from "@/components/Text/MarkText.vue";
+import ExampleText from "@/components/Text/ExampleText.vue";
+import CodeText from "@/components/Text/CodeText.vue";
+
+/* Imagens - Webp */
+import Img01 from "./img/img01.webp";
+import Img02 from "./img/img02.webp";
+import Img03 from "./img/img03.webp";
+import Img04 from "./img/img04.webp";
+import Img05 from "./img/img05.webp";
+import Img06 from "./img/img06.webp";
+import Img07 from "./img/img07.webp";
+import Img08 from "./img/img08.webp";
+
+export function getStaticPaths() {
+  formateTitle_04;
+  return [{ params: { title: formateTitle_04 } }];
+}
+---
+
+<Layout title={titleNews_04}>
+  <div class="container mx-auto mb-8 max-w-screen-lg rounded-lg bg-white p-8">
+    <header class="flex flex-col gap-10 pb-10">
+      <h2 class="text-sm font-medium text-[#4141b1]">
+        Publicado em {formateDate_04()}
+      </h2>
+      <h1 class="font-title text-center text-3xl font-semibold">
+        {titleNews_04}
+      </h1>
+    </header>
+
+    <section class="flex flex-col gap-4 hyphens-auto break-words leading-loose">
+      <p>
+        Se você entrou no mundo da programação, ao menos uma vez já viu na
+        internet que qualquer pessoa <MarkText>(desenvolvedor)</MarkText> pode contribuir
+        em projetos open-sources no <strong>GitHub</strong>, isso inclui desde
+        projetos individuais e até mesmo projetos de escopos de negócios.
+      </p>
+
+      <p>
+        Mas em meio a uma vastidão de códigos espalhados pela plataforma, como
+        vou saber onde dar o meu primeiro passo para contribuir com algo? Venha
+        por aqui, pegue na minha mão e siga esse tutorial rápido.
+      </p>
+
+      <p>
+        Em primeiro lugar siga esse link do projeto chamado
+        <MarkText>
+          <a
+            href="https://github.com/firstcontributions"
+            target="_blank"
+            rel="noreferrer">https://github.com/firstcontributions</a
+          >
+        </MarkText> e procure pelo nome do repositório chamado <MarkText>
+          first-contributions
+        </MarkText> como o exemplo da imagem abaixo:
+      </p>
+
+      <Image src={Img01} alt="imagem repositório github" />
+
+      <p>
+        Agora que localizou o repositório principal do projeto, para verificar
+        se é o mesmo repositório por onde você quer contribuir.
+      </p>
+
+      <p>
+        <ul>
+          <ExampleText>
+            Verifique as seguintes características que marquei:
+          </ExampleText>
+          <li>
+            📌 1 - Verifique se o projeto tem o nome <MarkText>
+              first-contributions
+            </MarkText> e que tem como o nome do repositório <MarkText>
+              first-contributions
+            </MarkText>: <CodeText>
+              first-contributions / first-contributions;
+            </CodeText>
+          </li>
+          <li>
+            📌 2 - O projeto first-contributions é <MarkText>
+              Public (público)
+            </MarkText>;
+          </li>
+          <li>
+            📌 3 - No momento da publicação desse tópico, o projeto possui <MarkText
+            >
+              Sponsor (patrocinador)
+            </MarkText>, cerca de <MarkText>506 visualizadores</MarkText>, <MarkText
+            >
+              68.4 mil forks
+            </MarkText> e cerca de
+            <MarkText>39.2 mil estrelas</MarkText>;
+          </li>
+        </ul>
+      </p>
+
+      <Image src={Img02} alt="imagem repositório github" />
+
+      <p>
+        Desça a página e você verá que abaixo das <MarkText>pastas</MarkText> aparecerá
+        algo escrito como <CodeText>Readme.md</CodeText>, caso tenha dúvidas
+        quanto a isso, em qualquer projeto do
+        <strong>GitHub</strong> você terá que descrever para as pessoas o que o seu
+        projeto faz <MarkText>(finalidade e objetivo)</MarkText>, então por
+        padrão, existe um arquivo chamado
+        <CodeText>readme.md</CodeText>.
+      </p>
+
+      <p>
+        Se você observar bem na imagem abaixo, verá que o projeto possui uma
+        dezena de bandeirinhas <MarkText>(incluindo o do Brasil)</MarkText>,
+        essa parte do projeto diz que possui tradução para o idioma em
+        específico relacionado a bandeirinha.
+      </p>
+
+      <Image src={Img03} alt="imagem repositório github" />
+
+      <p>
+        Clique no <MarkText>ícone da bandeira do Brasil</MarkText> e você será redirecionado
+        para uma outra página do mesmo formato porém traduzida.
+      </p>
+
+      <Image src={Img04} alt="imagem repositório github" />
+
+      <p>
+        Agora é só você seguir o passo-a-passo que você irá completar para
+        contribuir com o projeto.
+      </p>
+
+      <p>
+        Mas aí você vem e me pergunta: <strong>
+          "Tá e como vou saber que eu sou contribuinte do código? Quero me
+          'amostrar' para todo mundo indicando de alguma forma que contribuí com
+          o projeto."
+        </strong>
+      </p>
+
+      <p>
+        É bem simples saber como você contribuiu em algum projeto, primeiro <MarkText
+        >
+          vá para a sua página inicial do seu GitHub
+        </MarkText>, aqui é o meu perfil de exemplo:
+      </p>
+
+      <Image src={Img05} alt="imagem repositório github" />
+
+      <p>
+        Desça a página e veja onde que fica os registros de atividades marcadas
+        pelo GitHub <MarkText>(quadradinho verde)</MarkText>, essa parte é o seu <MarkText
+        >
+          histórico no GitHub
+        </MarkText>, inclusive você pode pesquisar por ano ou clicando no
+        quadrado cinza ou verde para saber o que você fez nesse dia.
+      </p>
+
+      <Image src={Img06} alt="imagem repositório github" />
+
+      <p>
+        Agora na parte onde marquei o <MarkText>
+          quadrado de vermelho (1)
+        </MarkText> significa que ficarão ali todas as suas contribuições do ano
+        em específico (no meu caso 2023), já no <MarkText>
+          quadrado verde (2)
+        </MarkText> é onde aparece a sua contribuição com o projeto firstcontributions
+      </p>
+
+      <Image src={Img07} alt="imagem repositório github" />
+
+      <p>
+        Ao clicar no botão <MarkText>firstcontributions</MarkText> em <MarkText>
+          Activity
+        </MarkText> aparecerá o que você fez no <MarkText>
+          Contributed to first-contributions (1)
+        </MarkText> e no <MarkText>quadradinho verde (2)</MarkText>
+        vai ser marcado o dia que você contribuiu com o projeto.
+      </p>
+
+      <Image src={Img08} alt="imagem repositório github" />
+
+      <p>
+        Bem, e isso é tudo pessoal, espero que você sinta-se a vontade a partir
+        desse primeiro momento para contribuir no mundo dos projetos
+        open-sources da comunidade <strong>GitHub</strong>.
+      </p>
+    </section>
+  </div>
+</Layout>

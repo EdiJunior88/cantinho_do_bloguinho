@@ -18,9 +18,9 @@ defineProps({
 </script>
 
 <template>
-  <div class="fontTitle mb-1 max-w-[740px]">
+  <div class="fontTitle mb-1 w-[740px]">
     <div
-      class="border-card relative -z-10 -mb-1 w-24 rounded-t-lg border bg-white px-2.5 py-2 text-center text-xs font-medium text-slate-500"
+      class="border-card relative -z-10 -mb-1 w-24 rounded-t-lg border bg-white px-2.5 py-2 text-center text-xs font-semibold tracking-wider text-slate-500"
     >
       {{ datePost }}
     </div>
