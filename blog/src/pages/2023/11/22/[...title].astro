@@ -1,0 +1,118 @@
+---
+/* Layout - Astro */
+import Layout from "@/layouts/Layout.astro";
+
+/* Title - TypeScript */
+import {
+  titleNews_03,
+  formateTitle_03,
+  formateDate_03,
+} from "@/pages/2023/11/22/title";
+
+/* CSS Global - TailWindCSS */
+import "@/css/style.css";
+
+/* Components - Vue */
+import MarkText from "@/components/Text/MarkText.vue";
+import ExampleText from "@/components/Text/ExampleText.vue";
+import CodeText from "@/components/Text/CodeText.vue";
+
+/* Codes - Markdown */
+import Code01 from "./Codes/code01.md";
+import Code02 from "./Codes/code02.md";
+
+export function getStaticPaths() {
+  formateTitle_03;
+  return [{ params: { title: formateTitle_03 } }];
+}
+---
+
+<Layout title={titleNews_03}>
+  <div class="container mx-auto max-w-screen-lg rounded-lg bg-white p-8">
+    <header class="flex flex-col gap-10 pb-10">
+      <h2 class="text-sm font-medium text-[#4141b1]">
+        Publicado em {formateDate_03()}
+      </h2>
+      <h1 class="font-title text-center text-3xl font-semibold">
+        {titleNews_03}
+      </h1>
+    </header>
+
+    <section class="flex flex-col gap-4 hyphens-auto break-words leading-loose">
+      <p>
+        Esse é um tutorial que funciona no <MarkText>NextJS (v14.0.3)</MarkText>
+      </p>
+
+      <p>
+        Como sempre quem é do front-end tem a incrível missão de brigar
+        diariamente com a responsividade das imagens e um dos grandes problemas
+        é deixá-la com a proporção original (nem muito esticada e tão pouco
+        muito amassada).
+      </p>
+
+      <p>
+        A vantagem do <MarkText>NextJS</MarkText> é ter uma otimização da imagem
+        sem "estragar" a beleza da mesma, por isso é muito comum utilizarmos o componente
+        <CodeText>&lt;Image /&gt;</CodeText> que possui algumas propriedades:
+      </p>
+
+      <Code01 />
+
+      <p>
+        <ul>
+          <ExampleText
+            >Principais características do componente Image:</ExampleText
+          >
+          <li>
+            📌 <CodeText>src</CodeText>: especifica o caminho da imagem a ser
+            exibida. No exemplo, a variável <MarkText>profilePic</MarkText> é usada
+            para fornecer o caminho da imagem.
+          </li>
+          <li>
+            📌 <CodeText>alt</CodeText>: define o texto alternativo que será
+            exibido caso a imagem não possa ser carregada.
+          </li>
+          <li>
+            📌 <CodeText>width</CodeText> e height: são fornecidos automaticamente
+            e definem as dimensões da imagem. No exemplo, o valor <MarkText>
+              500
+            </MarkText> é usado para ambos.
+          </li>
+          <li>
+            📌 <CodeText>blurDataURL</CodeText>: fornece uma URL de dados
+            embaçados para ser exibida enquanto a imagem é carregada. Essa
+            propriedade é fornecida automaticamente..
+          </li>
+          <li>
+            📌 <CodeText>placeholder</CodeText>: define o estilo de desfoque que
+            será exibido enquanto a imagem é carregada. Neste exemplo, a opção <MarkText
+            >
+              blur
+            </MarkText> é usada.
+          </li>
+        </ul>
+      </p>
+
+      <p>
+        Agora vamos ao que interessa, para deixar a imagem sempre responsiva e
+        com o tamanho correto, basta adicionar a propriedade <CodeText>
+          sizes="100vw"
+        </CodeText> e também um estilo inline <MarkText>style</MarkText> com o <CodeText
+        >
+          width: '100%'
+        </CodeText> e <CodeText>height: 'auto'</CodeText> igual ao código a seguir:
+      </p>
+
+      <Code02 />
+
+      <p>
+        Se de repente a imagem é grande demais ou então não tem os lados,
+        alturas iguais e você queira modificá-la para deixar responsiva, é só
+        mudar as especificações no <MarkText>style</MarkText> deixando o <CodeText
+        >
+          width: 'auto'
+        </CodeText> e modificando a altura <MarkText>(height)</MarkText>
+      </p>
+    </section>
+  </div>
+</Layout>

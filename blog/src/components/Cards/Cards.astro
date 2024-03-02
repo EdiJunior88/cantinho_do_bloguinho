@@ -14,6 +14,13 @@ import {
   formateDate_02,
 } from "@/pages/2023/11/21/title";
 
+import {
+  titleNews_03,
+  fullDate_03,
+  formateTitle_03,
+  formateDate_03,
+} from "@/pages/2023/11/22/title";
+
 /* Componentes Cards - Vue */
 import CardsVue from "./Cards.vue";
 
@@ -30,6 +37,12 @@ import { Icon } from "astro-iconify";
 
   <a href={`${fullDate_02}/${formateTitle_02}`}>
     <CardsVue title={titleNews_02} datePost={formateDate_02()}>
+      <Icon name="logos:nextjs-icon" size="55" />
+    </CardsVue>
+  </a>
+
+  <a href={`${fullDate_03}/${formateTitle_03}`}>
+    <CardsVue title={titleNews_03} datePost={formateDate_03()}>
       <Icon name="logos:nextjs-icon" size="55" />
     </CardsVue>
   </a>

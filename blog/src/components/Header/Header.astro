@@ -7,9 +7,14 @@ import { Icon } from "astro-iconify";
 
 /* Modal - Vue */
 import Modal from "../Modal/Modal.vue";
+
+/* Transição - Astro */
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <header class="mb-8 flex h-20 w-full items-center bg-[#a0db44] px-8">
+  <ViewTransitions />
+
   <div class="mx-auto flex max-w-screen-xl sm:gap-32 lg:gap-96">
     <HeaderVue title="Cantinho do Bloguinho">
       <Icon name="flat-color-icons:collaboration" size="50" />
