@@ -1,0 +1,149 @@
+---
+/* Layout - Astro */
+import Layout from "@/layouts/Layout.astro";
+
+/* Image Component - Astro */
+import { Image } from "astro:assets";
+
+/* Title - TypeScript */
+import {
+  titleNews_05,
+  formateTitle_05,
+  formateDate_05,
+} from "@/pages/2023/12/05/title";
+
+/* CSS Global - TailWindCSS */
+import "@/css/style.css";
+
+/* Components - Vue */
+import MarkText from "@/components/Text/MarkText.vue";
+import ExampleText from "@/components/Text/ExampleText.vue";
+import CodeText from "@/components/Text/CodeText.vue";
+
+/* Codes - Markdown */
+import Code01 from "./Codes/code01.md";
+import Code02 from "./Codes/code02.md";
+import Code03 from "./Codes/code03.md";
+
+/* Imagens - Webp */
+import Img01 from "./img/img01.webp";
+
+export function getStaticPaths() {
+  formateTitle_05;
+  return [{ params: { title: formateTitle_05 } }];
+}
+---
+
+<Layout title={titleNews_05}>
+  <div class="container mx-auto mb-8 max-w-screen-lg rounded-lg bg-white p-8">
+    <header class="flex flex-col gap-10 pb-10">
+      <h2 class="text-sm font-medium text-[#4141b1]">
+        Publicado em {formateDate_05()}
+      </h2>
+      <h1 class="font-title text-center text-3xl font-semibold">
+        {titleNews_05}
+      </h1>
+    </header>
+
+    <section class="flex flex-col gap-4 hyphens-auto break-words leading-loose">
+      <p>
+        Para o pessoal que utiliza o CSS na mão <MarkText>
+          (sem frameworks)
+        </MarkText>, dá para usar uma nova sintaxe no <strong
+          >Media Queries</strong
+        > (chamada de <MarkText>Media Queries Level 4</MarkText>) que vai
+        facilitar e muito o entendimento relacionado a largura de viewport <CodeText
+        >
+          (verifique antes a compatibilidade com os navegadores mais antigos)
+        </CodeText>.
+      </p>
+
+      <p>
+        Vamos utilizar como um exemplo a seguinte situação: <MarkText>
+          Eu quero que o texto fique somente com a fonte maior
+        </MarkText> contanto que o <MarkText>
+          tamanho da tela seja maior ou igual a 1200 pixels
+        </MarkText>, nesse caso irei fazer da seguinte maneira:
+      </p>
+
+      <Code01 />
+
+      <p>
+        Olhando pela primeira vez fica meio difícil interpretar o que diz na
+        parte do código @media (min-width: 1200px), vai demorar um pouquinho mas
+        você percebe que o código diz que <strong>
+          caso a largura da tela seja maior ou igual a 1200 pixels</strong
+        > a fonte do texto será de 3rem .
+      </p>
+
+      <p>
+        Agora foi introduzido uma nova sintaxe utilizando <MarkText>
+          operadores de comparação
+        </MarkText> do tipo <CodeText>&lt;, &gt;, &lt;=, &gt;=, =</CodeText>
+      </p>
+
+      <ul>
+        <li>
+          📌 <CodeText>&lt;</CodeText> avalia se um valor é <MarkText>
+            menor que
+          </MarkText> outro valor
+        </li>
+        <li>
+          📌 <CodeText>&gt;</CodeText> avalia se um valor é <MarkText>
+            maior que
+          </MarkText> outro valor
+        </li>
+        <li>
+          📌 <CodeText>=</CodeText> avalia se um valor é <MarkText>
+            igual
+          </MarkText> que outro valor
+        </li>
+        <li>
+          📌 <CodeText>&lt;=</CodeText> avalia se um valor é <MarkText>
+            menor ou igual
+          </MarkText> a outro valor
+        </li>
+        <li>
+          📌 <CodeText>&gt;=</CodeText> avalia se um valor é <MarkText>
+            maior ou igual
+          </MarkText> a outro valor
+        </li>
+      </ul>
+
+      <ExampleText>
+        Vejamos em um exemplo para que você fixe melhor esse assunto:
+      </ExampleText>
+
+      <Code02 />
+
+      <p>
+        Agora ficou mais fácil e intuitivo verificar em qual o ponto da
+        responsividade ficará a largura. Inclusive esse tipo de sintaxe funciona
+        também em <MarkText>comparação de intervalos</MarkText>, vejamos outro
+        exemplo:
+      </p>
+
+      <Code03 />
+
+      <p>
+        Explicando brevemente o <MarkText>segundo código</MarkText>: <strong>
+          O estilo é aplicado aos elementos quando a largura da janela de
+          visualização está entre 400 pixels e 1000 pixels.
+        </strong>
+      </p>
+
+      <p>
+        Caso você esteja curioso em implementar essa nova sintaxe em seus
+        códigos CSS, não esqueça de verificar no site <MarkText>
+          Can In Use
+        </MarkText> através desse link: <MarkText>
+          <a href="https://caniuse.com/exemplo" target="_self"
+            >https://caniuse.com/exemplo</a
+          >
+        </MarkText>
+      </p>
+
+      <Image src={Img01} alt="imagem caniuse web site" />
+    </section>
+  </div>
+</Layout>
