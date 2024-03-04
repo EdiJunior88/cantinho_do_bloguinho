@@ -10,13 +10,13 @@ dependencies:
     version: 0.5.6(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3)
   "@astrojs/tailwind":
     specifier: ^5.1.0
-    version: 5.1.0(astro@4.4.5)(tailwindcss@3.4.1)
+    version: 5.1.0(astro@4.4.11)(tailwindcss@3.4.1)
   "@astrojs/vercel":
     specifier: ^7.3.4
-    version: 7.3.4(astro@4.4.5)
+    version: 7.3.4(astro@4.4.11)
   "@astrojs/vue":
     specifier: ^4.0.8
-    version: 4.0.8(@babel/core@7.23.9)(astro@4.4.5)(vite@5.1.4)(vue@3.4.21)
+    version: 4.0.8(@babel/core@7.23.9)(astro@4.4.11)(vite@5.1.4)(vue@3.4.21)
   "@expressive-code/plugin-line-numbers":
     specifier: ^0.33.4
     version: 0.33.4
@@ -27,11 +27,11 @@ dependencies:
     specifier: ^1.2.2
     version: 1.2.2
   astro:
-    specifier: ^4.4.5
-    version: 4.4.5(typescript@5.3.3)
+    specifier: ^4.4.11
+    version: 4.4.11(typescript@5.3.3)
   astro-expressive-code:
     specifier: ^0.33.4
-    version: 0.33.4(astro@4.4.5)
+    version: 0.33.4(astro@4.4.11)
   astro-iconify:
     specifier: ^1.2.0
     version: 1.2.0
@@ -221,7 +221,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/tailwind@5.1.0(astro@4.4.5)(tailwindcss@3.4.1):
+  /@astrojs/tailwind@5.1.0(astro@4.4.11)(tailwindcss@3.4.1):
     resolution:
       {
         integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==,
@@ -230,8 +230,8 @@ packages:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.4.5(typescript@5.3.3)
       autoprefixer: 10.4.18(postcss@8.4.35)
+      astro: 4.4.11(typescript@5.3.3)
       postcss: 8.4.35
       postcss-load-config: 4.0.2(postcss@8.4.35)
       tailwindcss: 3.4.1
@@ -257,7 +257,7 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vercel@7.3.4(astro@4.4.5):
+  /@astrojs/vercel@7.3.4(astro@4.4.11):
     resolution:
       {
         integrity: sha512-EiuTe51/5ERiA1UbZCn8G2NmfDgb3x2SdfyVpVszpttS43k7wpPxbMqYNi5DgEsisFPGCcsu818exRi3m52CXA==,
@@ -268,7 +268,7 @@ packages:
       "@astrojs/internal-helpers": 0.2.1
       "@vercel/analytics": 1.2.2
       "@vercel/nft": 0.24.4
-      astro: 4.4.5(typescript@5.3.3)
+      astro: 4.4.11(typescript@5.3.3)
       esbuild: 0.19.12
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -280,7 +280,7 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vue@4.0.8(@babel/core@7.23.9)(astro@4.4.5)(vite@5.1.4)(vue@3.4.21):
+  /@astrojs/vue@4.0.8(@babel/core@7.23.9)(astro@4.4.11)(vite@5.1.4)(vue@3.4.21):
     resolution:
       {
         integrity: sha512-RnNA4wFy4HvQxU4vswH3c6sa7Br1F/JVzWdQvHYLP4CEe5OZ6yhEqxAUUo3LDkF+sNn23XznFLOPqZak6ziBwg==,
@@ -294,7 +294,7 @@ packages:
       "@vitejs/plugin-vue-jsx": 3.1.0(vite@5.1.4)(vue@3.4.21)
       "@vue/babel-plugin-jsx": 1.2.1(@babel/core@7.23.9)
       "@vue/compiler-sfc": 3.4.21
-      astro: 4.4.5(typescript@5.3.3)
+      astro: 4.4.11(typescript@5.3.3)
       vue: 3.4.21(typescript@5.3.3)
     transitivePeerDependencies:
       - "@babel/core"
@@ -2431,7 +2431,7 @@ packages:
       }
     dev: false
 
-  /astro-expressive-code@0.33.4(astro@4.4.5):
+  /astro-expressive-code@0.33.4(astro@4.4.11):
     resolution:
       {
         integrity: sha512-PtXLjd89WBA1WsDYlt3V1LZs9Pa8FFoXilaGDSyfxtbYJ2OPHjWh2JJvCiXmfXmY3HkPJ2oW9Jjo6om5vUlVcg==,
@@ -2439,7 +2439,7 @@ packages:
     peerDependencies:
       astro: ^3.3.0 || ^4.0.0-beta
     dependencies:
-      astro: 4.4.5(typescript@5.3.3)
+      astro: 4.4.11(typescript@5.3.3)
       hast-util-to-html: 8.0.4
       remark-expressive-code: 0.33.4
     dev: false
@@ -2459,10 +2459,10 @@ packages:
       - supports-color
     dev: false
 
-  /astro@4.4.5(typescript@5.3.3):
+  /astro@4.4.11(typescript@5.3.3):
     resolution:
       {
-        integrity: sha512-ccat42P5qr281JExywVsK/BLeKgwSL+oLxJP195s4Wvj3nL32djw+WNJNctuDDTJ5XWgvPdHZjBtSDNO5OgagQ==,
+        integrity: sha512-mJ1k67xzAJO1vTTpATe76uSWhOgiEj3Id7narE6X2rMMOBjR8vJM+9Cmv/Wbpot6uMwFo780skUowlMptK96fQ==,
       }
     engines: { node: ">=18.14.1", npm: ">=6.14.0" }
     hasBin: true
