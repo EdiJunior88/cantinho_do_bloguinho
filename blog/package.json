@@ -19,7 +19,7 @@
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
     "@vercel/analytics": "^1.2.2",
     "astro": "^4.4.11",
-    "astro-expressive-code": "^0.33.4",
+    "astro-expressive-code": "^0.33.5",
     "astro-iconify": "^1.2.0",
     "autoprefixer": "^10.4.18",
     "sharp": "^0.33.2",
