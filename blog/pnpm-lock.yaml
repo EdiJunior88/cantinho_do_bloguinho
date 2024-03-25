@@ -16,7 +16,7 @@ dependencies:
     version: 7.3.6(astro@4.5.6)
   "@astrojs/vue":
     specifier: ^4.0.9
-    version: 4.0.9(@babel/core@7.23.9)(astro@4.4.11)(vite@5.1.4)(vue@3.4.21)
+    version: 4.0.9(@babel/core@7.23.9)(astro@4.5.6)(vite@5.1.4)(vue@3.4.21)
   "@expressive-code/plugin-line-numbers":
     specifier: ^0.33.5
     version: 0.33.5
@@ -31,13 +31,13 @@ dependencies:
     version: 4.5.6(typescript@5.4.2)
   astro-expressive-code:
     specifier: ^0.33.5
-    version: 0.33.5(astro@4.4.11)
+    version: 0.33.5(astro@4.5.6)
   astro-iconify:
     specifier: ^1.2.0
     version: 1.2.0
   autoprefixer:
-    specifier: ^10.4.18
-    version: 10.4.18(postcss@8.4.35)
+    specifier: ^10.4.19
+    version: 10.4.19(postcss@8.4.35)
   sharp:
     specifier: ^0.33.2
     version: 0.33.2
@@ -238,7 +238,7 @@ packages:
       tailwindcss: ^3.0.24
     dependencies:
       astro: 4.5.6(typescript@5.4.2)
-      autoprefixer: 10.4.18(postcss@8.4.35)
+      autoprefixer: 10.4.19(postcss@8.4.35)
       postcss: 8.4.35
       postcss-load-config: 4.0.2(postcss@8.4.35)
       tailwindcss: 3.4.1
@@ -287,7 +287,7 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vue@4.0.9(@babel/core@7.23.9)(astro@4.4.11)(vite@5.1.4)(vue@3.4.21):
+  /@astrojs/vue@4.0.9(@babel/core@7.23.9)(astro@4.5.6)(vite@5.1.4)(vue@3.4.21):
     resolution:
       {
         integrity: sha512-go+dRsDQpZYbwvMTJygw9i9W7apsI36STm/Ic4NTcTnlMGjQZlFi3GyQiPB8rstX+FpuTaCDxFSzDhqfD89tig==,
@@ -1050,19 +1050,6 @@ packages:
     dev: false
     optional: true
 
-  /@expressive-code/core@0.33.4:
-    resolution:
-      {
-        integrity: sha512-IywACrwcR/7cIPBQ1qG/RsgvNp85/CAX6okxR0Niztrd7rh4IcEhAsz51jX/NPNnhU9yPynTT+mLdM1URqrnvw==,
-      }
-    dependencies:
-      "@ctrl/tinycolor": 3.6.1
-      hast-util-to-html: 8.0.4
-      hastscript: 7.2.0
-      postcss: 8.4.35
-      postcss-nested: 6.0.1(postcss@8.4.35)
-    dev: false
-
   /@expressive-code/core@0.33.5:
     resolution:
       {
@@ -1787,7 +1774,7 @@ packages:
       }
     deprecated: This is a stub types definition. autoprefixer provides its own type definitions, so you do not need this installed.
     dependencies:
-      autoprefixer: 10.4.18(postcss@8.4.35)
+      autoprefixer: 10.4.19(postcss@8.4.35)
     transitivePeerDependencies:
       - postcss
     dev: true
@@ -2468,7 +2455,7 @@ packages:
       }
     dev: false
 
-  /astro-expressive-code@0.33.5(astro@4.4.11):
+  /astro-expressive-code@0.33.5(astro@4.5.6):
     resolution:
       {
         integrity: sha512-9JAyllueMUN8JTl/h/yTdbKinNmfalEWcV11s3lSf/UJQbAZfWJuy+IlGcArZDI/CmD21GXhFHLqYthpdY33ug==,
@@ -2594,10 +2581,10 @@ packages:
       }
     dev: false
 
-  /autoprefixer@10.4.18(postcss@8.4.35):
+  /autoprefixer@10.4.19(postcss@8.4.35):
     resolution:
       {
-        integrity: sha512-1DKbDfsr6KUElM6wg+0zRNkB/Q7WcKYAaK+pzXn+Xqmszm/5Xa9coeNdtP88Vi+dPzZnMjhge8GIV49ZQkDa+g==,
+        integrity: sha512-BaENR2+zBZ8xXhM4pUaKUxlVdxZ0EZhjvbopwnXmxRUfqDmwSpC2lAi/QXvx7NRdPCo1WKEcEF6mV64si1z4Ew==,
       }
     engines: { node: ^10 || ^12 || >=14 }
     hasBin: true
@@ -2605,7 +2592,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.23.0
-      caniuse-lite: 1.0.30001591
+      caniuse-lite: 1.0.30001600
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -2812,7 +2799,7 @@ packages:
     engines: { node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7 }
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001591
+      caniuse-lite: 1.0.30001600
       electron-to-chromium: 1.4.684
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
@@ -2869,10 +2856,10 @@ packages:
     engines: { node: ">=14.16" }
     dev: false
 
-  /caniuse-lite@1.0.30001591:
+  /caniuse-lite@1.0.30001600:
     resolution:
       {
-        integrity: sha512-PCzRMei/vXjJyL5mJtzNiUCKP59dm8Apqc3PH8gJkMnMXZGox93RbE76jHsmLwmIo6/3nsYIpJtx0O7u5PqFuQ==,
+        integrity: sha512-+2S9/2JFhYmYaDpZvo0lKkfvuKIglrx68MwOBqMGHhQsNkLjB5xtc/TGoEPs+MxjSyN/72qer2g97nzR641mOQ==,
       }
 
   /ccount@2.0.1:
