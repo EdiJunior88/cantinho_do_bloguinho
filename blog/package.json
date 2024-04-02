@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^7.4.0",
+    "@astrojs/vercel": "^7.5.0",
     "@astrojs/vue": "^4.0.9",
     "@expressive-code/plugin-line-numbers": "^0.33.5",
     "@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
@@ -30,7 +30,7 @@
     "@types/autoprefixer": "^10.2.0",
     "@types/postcss-import": "^14.0.3",
     "@types/tailwindcss": "^3.1.0",
-    "postcss-import": "^16.0.1",
+    "postcss-import": "^16.1.0",
     "postcss-nesting": "^12.1.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
