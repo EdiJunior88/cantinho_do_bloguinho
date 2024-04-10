@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^16.1.0
     version: 16.1.0(postcss@8.4.38)
   postcss-nesting:
-    specifier: ^12.1.0
-    version: 12.1.0(postcss@8.4.38)
+    specifier: ^12.1.1
+    version: 12.1.1(postcss@8.4.38)
   prettier:
     specifier: ^3.2.5
     version: 3.2.5
@@ -882,10 +882,10 @@ packages:
       postcss-selector-parser: 6.0.15
     dev: true
 
-  /@csstools/selector-specificity@3.0.2(postcss-selector-parser@6.0.15):
+  /@csstools/selector-specificity@3.0.3(postcss-selector-parser@6.0.15):
     resolution:
       {
-        integrity: sha512-RpHaZ1h9LE7aALeQXmXrJkRG84ZxIsctEN2biEUmFyKpzFM3zZ35eUMcIzZFsw/2olQE6v69+esEqU2f1MKycg==,
+        integrity: sha512-KEPNw4+WW5AVEIyzC80rTbWEUatTW2lXpN8+8ILC8PiPeWPjwUzrPZDIOZ2wwqDmeqOYTdSGyL3+vE5GC3FB3Q==,
       }
     engines: { node: ^14 || ^16 || >=18 }
     peerDependencies:
@@ -6773,30 +6773,17 @@ packages:
       postcss: 8.4.35
       postcss-selector-parser: 6.0.15
 
-  /postcss-nested@6.0.1(postcss@8.4.38):
+  /postcss-nesting@12.1.1(postcss@8.4.38):
     resolution:
       {
-        integrity: sha512-mEp4xPMi5bSWiMbsgoPfcP74lsWLHkQbZc3sY+jWYd65CUwXrUaTp0fmNpa01ZcETKlIgUdFN/MpS2xZtqL9dQ==,
-      }
-    engines: { node: ">=12.0" }
-    peerDependencies:
-      postcss: ^8.2.14
-    dependencies:
-      postcss: 8.4.38
-      postcss-selector-parser: 6.0.15
-    dev: false
-
-  /postcss-nesting@12.1.0(postcss@8.4.38):
-    resolution:
-      {
-        integrity: sha512-QOYnosaZ+mlP6plQrAxFw09UUp2Sgtxj1BVHN+rSVbtV0Yx48zRt9/9F/ZOoxOKBBEsaJk2MYhhVRjeRRw5yuw==,
+        integrity: sha512-qc74KvIAQNa5ujZKG1UV286dhaDW6basbUy2i9AzNU/T8C9hpvGu9NZzm1SfePe2yP7sPYgpA8d4sPVopn2Hhw==,
       }
     engines: { node: ^14 || ^16 || >=18 }
     peerDependencies:
       postcss: ^8.4
     dependencies:
       "@csstools/selector-resolve-nested": 1.1.0(postcss-selector-parser@6.0.15)
-      "@csstools/selector-specificity": 3.0.2(postcss-selector-parser@6.0.15)
+      "@csstools/selector-specificity": 3.0.3(postcss-selector-parser@6.0.15)
       postcss: 8.4.38
       postcss-selector-parser: 6.0.15
     dev: true
@@ -7868,6 +7855,21 @@ packages:
       streamx: 2.16.1
     dev: false
     optional: true
+
+  /tar@6.2.1:
+    resolution:
+      {
+        integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==,
+      }
+    engines: { node: ">=10" }
+    dependencies:
+      chownr: 2.0.0
+      fs-minipass: 2.1.0
+      minipass: 5.0.0
+      minizlib: 2.1.2
+      mkdirp: 1.0.4
+      yallist: 4.0.0
+    dev: false
 
   /tar@6.2.1:
     resolution:
