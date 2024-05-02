@@ -34,13 +34,16 @@ Full tech stack [here](/techstack.md)
 <div align="center">
 
 # Tech Stack File
+
 ![](https://img.stackshare.io/repo.svg "repo") [EdiJunior88/cantinho_do_bloguinho](https://github.com/EdiJunior88/cantinho_do_bloguinho)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
 |16<br/>Tools used|05/02/24 <br/>Report generated|
 |------|------|
+
 </div>
 
 ## <img src='https://img.stackshare.io/languages.svg'/> Languages (3)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/6727/css.png' alt='CSS 3'>
@@ -70,6 +73,7 @@ Full tech stack [here](/techstack.md)
 </table>
 
 ## <img src='https://img.stackshare.io/frameworks.svg'/> Frameworks (3)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/2202/72d087642cfce6fef6f2dabec5bf49e8_400x400.png' alt='Autoprefixer'>
@@ -99,6 +103,7 @@ Full tech stack [here](/techstack.md)
 </table>
 
 ## <img src='https://img.stackshare.io/devops.svg'/> DevOps (3)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/1046/git.png' alt='Git'>
@@ -128,6 +133,7 @@ Full tech stack [here](/techstack.md)
 </table>
 
 ## Other (1)
+
 <table><tr>
   <td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/101756/default_4f2991cba3ec7fdd1cc87de69f4868157b0f2001.png' alt='Vercel AI SDK'>
@@ -140,19 +146,18 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-
 ## <img src='https://img.stackshare.io/group.svg' /> Open source packages (6)</h2>
 
 ## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (6)
 
-|NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
-|:------|:------|:------|:------|:------|:------|
-|[@vercel/analytics](https://www.npmjs.com/@vercel/analytics)|v1.2.2|04/01/24|dependabot[bot] |N/A|N/A|
-|[postcss-import](https://www.npmjs.com/postcss-import)|v16.1.0|04/08/24|dependabot[bot] |MIT|N/A|
-|[postcss-nesting](https://www.npmjs.com/postcss-nesting)|v12.1.1|04/08/24|dependabot[bot] |CC0-1.0|N/A|
-|[sharp](https://www.npmjs.com/sharp)|v0.33.3|03/25/24|dependabot[bot] |Apache-2.0|N/A|
-|[tailwindcss](https://www.npmjs.com/tailwindcss)|v3.4.1|04/01/24|dependabot[bot] |MIT|N/A|
-|[vue](https://www.npmjs.com/vue)|v3.4.21|02/27/24|EdiJunior88 |MIT|N/A|
+| NAME                                                         | VERSION | LAST UPDATED | LAST UPDATED BY | LICENSE    | VULNERABILITIES |
+| :----------------------------------------------------------- | :------ | :----------- | :-------------- | :--------- | :-------------- |
+| [@vercel/analytics](https://www.npmjs.com/@vercel/analytics) | v1.2.2  | 04/01/24     | dependabot[bot] | N/A        | N/A             |
+| [postcss-import](https://www.npmjs.com/postcss-import)       | v16.1.0 | 04/08/24     | dependabot[bot] | MIT        | N/A             |
+| [postcss-nesting](https://www.npmjs.com/postcss-nesting)     | v12.1.1 | 04/08/24     | dependabot[bot] | CC0-1.0    | N/A             |
+| [sharp](https://www.npmjs.com/sharp)                         | v0.33.3 | 03/25/24     | dependabot[bot] | Apache-2.0 | N/A             |
+| [tailwindcss](https://www.npmjs.com/tailwindcss)             | v3.4.1  | 04/01/24     | dependabot[bot] | MIT        | N/A             |
+| [vue](https://www.npmjs.com/vue)                             | v3.4.21 | 02/27/24     | EdiJunior88     | MIT        | N/A             |
 
 <br/>
 <div align='center'>
